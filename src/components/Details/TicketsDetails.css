@@ -1,0 +1,10 @@
+.details {
+  padding-top: 4%;
+}
+
+.details-back {
+  background-image: url("https://ic.p24.app/unsafe/1600x700/smart/filters:quality(80)/cdn.p24.app/r/sc/ru/5b/5b6927e6-db8f-4158-b4a1-1a7b5db1bee5/c8ab1d31-c94f-44fd-97a4-2a3774a3fe62.jpg");
+  height: 100vh;
+  background-size: cover;
+  backdrop-filter: blur(100px);
+}

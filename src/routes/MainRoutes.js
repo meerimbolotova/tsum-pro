@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from "../pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import AdminPage from "../pages/AdminPage";
+import TicketsDetails from "../components/Details/TicketsDetails";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -12,6 +13,10 @@ const MainRoutes = () => {
     {
       link: "/admin",
       element: <AdminPage />,
+    },
+    {
+      link: "/details",
+      element: <TicketsDetails />,
     },
   ];
 
