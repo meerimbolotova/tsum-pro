@@ -1,0 +1,39 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+}
+.main-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 3px solid #d39742;
+}
+.logo {
+  width: 5%;
+  padding: auto;
+  padding-left: 1%;
+  display: flex;
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  color: #f2c18c;
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  padding-right: 1%;
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.navbar-bord {
+  width: 95%;
+  height: 5px;
+  margin: auto;
+  background-color: #00000054;
+}
+li:hover {
+  color: white;
+}
