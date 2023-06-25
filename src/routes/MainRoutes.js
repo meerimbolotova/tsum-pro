@@ -2,6 +2,9 @@ import React from "react";
 import HomePage from "../pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import AdminPage from "../pages/AdminPage";
+import Feedback from "../components/Feedback/Feedback";
+import Contact from "../components/Contact/Contact";
+import TicketRefund from "../components/TicketRefund/TicketRefund";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -12,6 +15,18 @@ const MainRoutes = () => {
     {
       link: "/admin",
       element: <AdminPage />,
+    },
+    {
+      link: "/feedback",
+      element: <Feedback />,
+    },
+    {
+      link: "/contact",
+      element: <Contact />,
+    },
+    {
+      link: "/ticketrefund",
+      element: <TicketRefund />,
     },
   ];
 
