@@ -1,0 +1,48 @@
+.box {
+  height: 60px;
+  background: gray;
+}
+.feedback-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: gray;
+}
+.feedback-text {
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+}
+.feedback-form {
+  width: 96%;
+  background-color: #161616;
+}
+
+.feedback-block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.feedback-block-inps {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 2%;
+}
+.feedback-message {
+  width: 70%;
+  margin: 2%;
+}
+
+.feedback-inp {
+  width: 100%;
+  height: 50px;
+  margin: 4%;
+}
+
+.feedback-inp-message {
+  width: 90%;
+  height: 205px;
+  margin: 2%;
+}
