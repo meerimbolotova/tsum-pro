@@ -1,0 +1,11 @@
+.box {
+  font-size: calc(1vw + 1vh * 0.8);
+}
+
+.container {
+  background-image: url(./photo.png);
+  background-size: calc(1vw + 1vh * 225);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+}
