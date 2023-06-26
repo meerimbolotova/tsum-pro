@@ -3,6 +3,7 @@
   position: fixed;
 }
 .main-navbar {
+  padding: 1%;
   width: 100%;
   display: flex;
   justify-content: space-between;
