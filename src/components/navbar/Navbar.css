@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
   position: fixed;
+  z-index: 10;
 }
 .main-navbar {
   width: 100%;
@@ -17,7 +18,7 @@
   text-align: center;
 }
 
-ul {
+.navbar-menu {
   display: flex;
   justify-content: space-between;
   width: 30%;

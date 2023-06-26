@@ -1,12 +1,14 @@
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import MainRoutes from "./routes/MainRoutes";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <MainRoutes />
+      <Footer />
     </>
   );
 };
