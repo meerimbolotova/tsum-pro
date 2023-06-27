@@ -4,48 +4,33 @@ import "./Admin.css";
 const Admin = () => {
   return (
     <div
-      className="container"
-      style={{
-        width: "100%",
-      }}
+      className="admin__container"
     >
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "20px",
-        }}
-        className="box"
+        className="admin__box"
       >
-        <h2 style={{ marginTop: "200px" }}>ADD CINEMA</h2>
-        <input placeholder="title" style={{ width: "40%", height: "50px" }} />
-        <input placeholder="price" style={{ width: "40%", height: "50px" }} />
-        <input placeholder="image" style={{ width: "40%", height: "50px" }} />
+        <h2 className="admin__title">ADD CINEMA</h2>
+        <input placeholder="title" className="inps admin__inp"/>
+        <input placeholder="price" className="inps admin__inp" />
+        <input placeholder="image" className="inps admin__inp" />
         <input
           placeholder="description"
-          style={{ width: "40%", height: "50px" }}
+          className="inps admin__inp"
         />
         <input
           placeholder="duration"
-          style={{ width: "40%", height: "50px" }}
+          className="inps admin__inp"
         />
         <input
           placeholder="director"
-          style={{ width: "40%", height: "50px" }}
+          className="inps admin__inp"
         />
-        <input placeholder="cast" style={{ width: "40%", height: "50px" }} />
-        <button
-          style={{
-            width: "40%",
-            height: "50px",
-            backgroundColor: "red",
-            border: "none",
-          }}
+        <input placeholder="cast" className="inps admin__inp" />
+        <button className="admin__btn"
         >
           ADD
         </button>
-      </div>
+        </div>
     </div>
   );
 };
