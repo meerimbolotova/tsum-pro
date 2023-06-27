@@ -1,10 +1,86 @@
 .details {
-  padding-top: 4%;
+  padding-top: 5%;
 }
 
 .details-back {
   background-image: url("https://ic.p24.app/unsafe/1600x700/smart/filters:quality(80)/cdn.p24.app/r/sc/ru/5b/5b6927e6-db8f-4158-b4a1-1a7b5db1bee5/c8ab1d31-c94f-44fd-97a4-2a3774a3fe62.jpg");
   height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
   background-size: cover;
-  backdrop-filter: blur(100px);
+  /* backdrop-filter: blur(100px); */
 }
+.details-name {
+  padding: 1%;
+}
+.film-name {
+  background-color: #d39742;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5vw;
+  font-weight: 700;
+  padding: 0.3%;
+}
+.film-descr {
+  display: flex;
+  align-items: center;
+  margin-top: 1%;
+}
+.film-age {
+  font-size: 1.8vw;
+  background-color: #5c8a00;
+  color: white;
+  border-radius: 5px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.2%;
+}
+.film-genre {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8vw;
+  color: white;
+  padding: 0.3%;
+  background-color: rgb(21, 18, 18);
+}
+.genre-city {
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+}
+.genre-list {
+  font-family: "Montserrat", sans-serif;
+}
+.details-time {
+  display: flex;
+  flex-direction: column;
+}
+.line {
+  width: 50%;
+  margin-top: 1%;
+  border-top: 3px solid #ffffff;
+  height: 8px;
+  margin-left: 1%;
+  opacity: 0.3;
+}
+.details-hall {
+  font-size: 1.5vw;
+  margin-left: 5%;
+  width: 5%;
+  color: #ffffff;
+  opacity: 0.9;
+}
+.details-image {
+  width: 20%;
+}
+.details-image > img {
+  width: 20%;
+  position: absolute;
+  top: 105%;
+  left: 1%;
+}
+.back-blur {
+  width: 100%;
+  height: 100vw;
+  background-color: rgb(168, 181, 192, 0.5);
+  /* backdrop-filter: blur(20px); */
+}
+/* ----------------------------------------------- */
