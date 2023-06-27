@@ -9,12 +9,46 @@ const Card = () => {
   }, []);
   const { cards } = useSelector(state => state.cards);
   return (
-    <div className='card__container'>
-      {cards.map((elem, index) => (
-        <div style={{ width: '30%', height: '60%' }} key={index}>
-          <img src={elem.image} alt='error' style={{ height: '60%' }} />
-          <h2 style={{ fontWeight: '900', fontSize: '45px' }}>{elem.title}</h2>
-        </div>
+    <div className='body'>
+      {cards.map(elem => (
+        <>
+          <div className='wrapper'>
+            <div className='cols'>
+              <div className='col' ontouchstart="this.classList.toggle('hover');">
+                <div className='container'>
+                  <div className='front'>
+                    <img
+                      src={elem.image}
+                      alt='error'
+                      style={{ width: '100%', maxWidth: '80rem' }}
+                    />
+                    <div className='inner'>
+                      <p>{elem.title}</p>
+                    </div>
+                  </div>
+                  <div className='back'>
+                    <img
+                      src={elem.image}
+                      alt='error'
+                      style={{ width: '100%', maxWidth: '80rem' }}
+                    />
+                    <div className='inner'>
+                      <iframe
+                        width='1000'
+                        height='500'
+                        src={elem.link}
+                        title='YouTube video player'
+                        frameborder='0'
+                        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       ))}
     </div>
   );
