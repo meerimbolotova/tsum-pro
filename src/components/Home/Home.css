@@ -49,8 +49,8 @@ article {
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   min-height: 100vh;
   background-color: #fff;
   color: #010101;

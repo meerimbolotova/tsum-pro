@@ -12,7 +12,8 @@ const Card = () => {
     <div className='card__container'>
       {cards.map((elem, index) => (
         <div style={{ width: '30%', height: '60%' }} key={index}>
-          <img src={elem.image} alt='error' />
+          <img src={elem.image} alt='error' style={{ height: '60%' }} />
+          <h2 style={{ fontWeight: '900', fontSize: '45px' }}>{elem.title}</h2>
         </div>
       ))}
     </div>
