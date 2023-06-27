@@ -5,6 +5,7 @@
 }
 
 .main-navbar {
+  padding: 1%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -23,7 +24,7 @@
 .navbar-menu {
   display: flex;
   justify-content: space-between;
-  width: 30%;
+  width: 27%;
   color: #f2c18c;
   list-style-type: none;
   font-family: "Montserrat", sans-serif;
