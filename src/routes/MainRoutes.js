@@ -19,6 +19,7 @@ const MainRoutes = () => {
     { link: "/login", element: <Login /> },
     { link: "/admin", element: <AdminPage /> },
     { link: "/register", element: <Register /> },
+    { link: "/details", element: <TicketsDetails /> },
   ];
 
   return (

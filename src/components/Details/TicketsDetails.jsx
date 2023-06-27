@@ -50,6 +50,40 @@ const TicketsDetails = () => {
               <span></span>
             </div>
           </div>
+          <div className="time-container">
+            <div className="time-block">
+              <div className="time">10:15</div>
+              <div className="price-cont">
+                <span className="price">350c</span>
+                <br />
+                <span className="visual">3D</span>
+              </div>
+            </div>
+            <div className="time-block">
+              <div className="time">12:15</div>
+              <div className="price-cont">
+                <span className="price">350c</span>
+                <br />
+                <span className="visual">3D</span>
+              </div>
+            </div>
+            <div className="time-block">
+              <div className="time">14:15</div>
+              <div className="price-cont">
+                <span className="price">350c</span>
+                <br />
+                <span className="visual">3D</span>
+              </div>
+            </div>
+            <div className="time-block">
+              <div className="time">16:15</div>
+              <div className="price-cont">
+                <span className="price">350c</span>
+                <br />
+                <span className="visual">3D</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

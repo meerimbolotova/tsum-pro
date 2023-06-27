@@ -82,9 +82,10 @@
   left: 1%;
 }
 .back-blur {
+  background-image: url("https://fons.pibig.info/uploads/posts/2023-05/1685564759_fons-pibig-info-p-zadnii-fon-serii-6.jpg");
   width: 100%;
   height: 100vw;
-  background-color: rgba(128, 133, 138, 0.5);
+  /* background-color: rgba(29, 30, 31, 0.5); */
   /* backdrop-filter: blur(20px); */
 }
 /* ----------------------------------------------- */
@@ -116,6 +117,11 @@
   padding-top: 6%;
   text-align: center;
   background-color: #d39742;
+  cursor: pointer;
+  transition: all 400ms;
+}
+.days:hover {
+  background-color: #ba8939;
 }
 .details-days {
   position: absolute;
@@ -141,4 +147,32 @@ span {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.5vw;
+}
+.time-container {
+  width: 50%;
+  margin: 1% 31%;
+  display: flex;
+  justify-content: space-between;
+}
+.time-block {
+  display: flex;
+}
+.time {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3vw;
+  color: #d39742;
+  cursor: pointer;
+  transition: all 400ms;
+}
+.price-cont {
+  padding-top: 2%;
+  padding-left: 2%;
+}
+.time:hover {
+  color: #dad5cd;
+}
+.price-cont > span {
+  font-size: 1vw;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
 }
