@@ -1,25 +1,24 @@
 .navbar-container {
   display: flex;
   width: 100%;
-  position: sticky;
-  background-color: rgba(0, 0, 0, 0.9);
-  border-top: 3px solid #d39742;
+  position: fixed;
+  flex-direction: column;
 }
 
 .navbar-main {
-  margin-top: 10px;
-  margin-bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 3px solid #d39742;
   height: 60px;
 }
 
 .navbar-logo {
-  width: 5%;
-  padding: auto;
-  padding-left: 1%;
+  width: 8%;
+
   display: flex;
+  justify-content: center;
   text-align: center;
 }
 
@@ -27,7 +26,7 @@
   white-space: pre;
   border: none;
   color: #d39742;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .navbar-right {
@@ -45,6 +44,7 @@
   width: 95%;
   height: 5px;
   margin: auto;
+  background-color: #00000054;
 }
 
 .navbar-a:hover {

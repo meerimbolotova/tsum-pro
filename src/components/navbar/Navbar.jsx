@@ -8,6 +8,7 @@ const Navbar = () => {
         <div className="navbar-main">
           <div className="navbar-logo">
             <img
+              style={{ width: "80px" }}
               src="https://my.p24.app/files/52a3e2cd-dac5-4d00-b296-3c84d33a4377.svg"
               alt="logo"
             />
@@ -19,6 +20,7 @@ const Navbar = () => {
             <a className="navbar-a"> 0500 000 005</a>
           </div>
         </div>
+        <div className="navbar-bord"></div>
       </div>
     </>
   );
