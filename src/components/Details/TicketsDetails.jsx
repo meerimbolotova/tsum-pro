@@ -27,10 +27,24 @@ const TicketsDetails = () => {
             />
           </div>
           <div className="details-navbar">
-
-            
+            <div className="details-main-navbar">
+              <div className="details-days">
+                <div className="details-today days">
+                  <h5>Сегодня</h5>
+                  <span>27 июня</span>
+                </div>
+                <div className="details-tomorrow days">
+                  <h5>Завтра</h5>
+                  <span>28 июня</span>
+                </div>
+              </div>
+              <div className="details-3d">
+                <span>3D</span>
+              </div>
+            </div>
+            <div className="details-bord-navbar"></div>
           </div>
-          <div style={{ display: "flex" }}>
+          <div className="halls">
             <h5 className="details-hall">Зал 3</h5>
             <div className="line">
               <span></span>
@@ -41,10 +55,5 @@ const TicketsDetails = () => {
     </div>
   );
 };
-
-
-
-
-
 
 export default TicketsDetails;

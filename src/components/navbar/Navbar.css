@@ -37,6 +37,7 @@
   width: 95%;
   height: 5px;
   margin: auto;
+  background-color: #00000054;
 }
 
 li:hover {
