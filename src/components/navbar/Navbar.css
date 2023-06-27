@@ -3,6 +3,7 @@
   position: fixed;
   z-index: 10;
 }
+
 .main-navbar {
   padding: 1%;
   width: 100%;
@@ -11,6 +12,7 @@
   background-color: rgba(0, 0, 0, 0.9);
   border-top: 3px solid #d39742;
 }
+
 .logo {
   width: 5%;
   padding: auto;
@@ -30,12 +32,13 @@
   font-size: 1.2vw;
   cursor: pointer;
 }
+
 .navbar-bord {
   width: 95%;
   height: 5px;
   margin: auto;
-  background-color: #00000054;
 }
+
 li:hover {
   color: white;
 }

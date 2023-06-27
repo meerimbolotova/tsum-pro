@@ -1,11 +1,34 @@
-.box {
-  font-size: calc(1vw + 1vh * 0.8);
-}
-
-.container {
+.admin__container {
   background-image: url(./photo.png);
   background-size: calc(1vw + 1vh * 225);
-  height: 100vh;
+  min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+}
+
+.admin__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(1vw + 1vh * 0.8);
+  margin-bottom: 50px;
+}
+
+.inps {
+  width: 40%;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.admin__btn {
+  width: 40%;
+  height: 50px;
+  background-color: red;
+  border: none;
+}
+
+.admin__title {
+  margin-top: 150px;
+  margin-bottom: 50px;
 }
