@@ -26,7 +26,10 @@ const TicketsDetails = () => {
               alt=""
             />
           </div>
-          <div className="details-navbar">ehnjj</div>
+          <div className="details-navbar">
+
+            
+          </div>
           <div style={{ display: "flex" }}>
             <h5 className="details-hall">Зал 3</h5>
             <div className="line">
@@ -38,5 +41,10 @@ const TicketsDetails = () => {
     </div>
   );
 };
+
+
+
+
+
 
 export default TicketsDetails;
