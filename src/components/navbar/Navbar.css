@@ -11,7 +11,8 @@
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.9);
   border-top: 3px solid #d39742;
-  height: 60px;
+  height: 65px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .navbar-logo {
