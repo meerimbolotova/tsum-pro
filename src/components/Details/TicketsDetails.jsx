@@ -3,16 +3,22 @@ import "./TicketsDetails.css";
 
 const TicketsDetails = () => {
   const [show, setShow] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const seats = () => {
     let arr = [];
-
-    for (let i = 1; i < 11; i++) {
+    for (let i = 10; i > 0; i--) {
       arr.push(i);
     }
     return arr;
   };
-  const [modal, setModal] = useState(false);
+  const seats2 = () => {
+    let arr2 = [];
+    for (let i = 7; i > 0; i--) {
+      arr2.push(i);
+    }
+    return arr2;
+  };
 
   return (
     <div className="details">
@@ -122,14 +128,27 @@ const TicketsDetails = () => {
                       ))}
                     </div>{" "}
                     <div className="modal-btn-places">
-                      {seats().map((item) => (
+                      {seats2().map((item) => (
                         <button className="modal-buttons">{item}</button>
                       ))}
                     </div>{" "}
                     <div className="modal-btn-places">
-                      {seats().map((item) => (
+                      {seats2().map((item) => (
                         <button className="modal-buttons">{item}</button>
                       ))}
+                    </div>
+                    <div className="modal-btn-places">
+                      {seats2().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>
+                    <div className="modal-btn-places">
+                      {" "}
+                      1
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}{" "}
+                      1
                     </div>
                   </div>
                 </div>
