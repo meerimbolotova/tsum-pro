@@ -7,7 +7,7 @@ export default function Register() {
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [password_confirm, setPassword_Confirm] = React.useState("");
+  // const [password_confirm, setPassword_Confirm] = React.useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ export default function Register() {
     if (
       !email.trim() ||
       !username.trim() ||
-      !password.trim() ||
-      !password_confirm.trim()
+      !password.trim()
+      // !password_confirm.trim()
     ) {
       alert("Заполните поля!");
       return;
@@ -26,7 +26,7 @@ export default function Register() {
     formData.append("email", email);
     formData.append("username", username);
     formData.append("password", password);
-    formData.append("password_confirm", password_confirm);
+    // formData.append("password_confirm", password_confirm);
 
     dispatch(register({ formData, navigate }));
   };
@@ -58,14 +58,14 @@ export default function Register() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input
+      {/* <input
         placeholder="confim password"
         type="password"
         id="password"
         autoComplete="current-password"
         value={password_confirm}
         onChange={(e) => setPassword_Confirm(e.target.value)}
-      />
+      /> */}
       <button onClick={handleSubmit}>регистрация</button>
       <button onClick={() => navigate("/login")}>войти</button>
     </div>
