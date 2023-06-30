@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TicketsDetails.css";
 
 const TicketsDetails = () => {
+  const [show, setShow] = useState(false);
+
+  const seats = () => {
+    let arr = [];
+
+    for (let i = 1; i < 11; i++) {
+      arr.push(i);
+    }
+    return arr;
+  };
+
   return (
     <div className="details">
       <div className="details-back">
@@ -52,7 +63,53 @@ const TicketsDetails = () => {
           </div>
           <div className="time-container">
             <div className="time-block">
-              <div className="time">10:15</div>
+              {/* <div className="time">10:15</div> */}
+              {/* ============================================= */}
+
+              <div className="time" onClick={() => setShow(true)}>
+                10:15
+              </div>
+              {show ? (
+                <div className="modal-place">
+                  <button
+                    className="modal-btn-setShow"
+                    onClick={() => setShow(false)}
+                  >
+                    close
+                  </button>
+                  <div className="modal-place-block">
+                    <div className="modal-btn-places">
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>
+                    <div className="modal-btn-places">
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>
+                    <div className="modal-btn-places">
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>{" "}
+                    <div className="modal-btn-places">
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>{" "}
+                    <div className="modal-btn-places">
+                      {seats().map((item) => (
+                        <button className="modal-buttons">{item}</button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+
+              {/* ============================================= */}
               <div className="price-cont">
                 <span className="price">350c</span>
                 <br />

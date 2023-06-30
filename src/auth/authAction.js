@@ -32,7 +32,7 @@ export const login = createAsyncThunk(
   "@auth/login",
   async ({ formData, navigate, username }) => {
     try {
-      const token = await axios.post(`${API_AUTH}jwt/create/`, formData);
+      const token = await axios.post(`${API_AUTH}login/`, formData);
       localStorage.setItem("token", JSON.stringify(token.data));
       localStorage.setItem("username", JSON.stringify(username));
       navigate("/");
