@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TicketsDetails.css";
 
 const TicketsDetails = () => {
+  const [modal, setModal] = useState(false);
+
   return (
     <div className="details">
       <div className="details-back">
@@ -25,6 +27,33 @@ const TicketsDetails = () => {
               src="https://ic.p24.app/unsafe/540x800/filters:quality(80)/st.p24.app/static/posters/28183/86cdb6b6-de91-4f65-a28e-4f33f1e5d5c6.png?1685890057"
               alt=""
             />
+            <div className="details-youtube" onClick={() => setModal(true)}>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
+                alt=""
+              />
+            </div>
+            {modal ? (
+              <div className="details-video">
+                <iframe
+                  width="860"
+                  height="515"
+                  src="https://www.youtube.com/embed/ls7SJ7jneJo"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+                <button
+                  className="close-video-btn"
+                  onClick={() => setModal(false)}
+                >
+                  X
+                </button>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="details-navbar">
             <div className="details-main-navbar">
@@ -84,6 +113,39 @@ const TicketsDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="films-details">
+          <ul className="details-list">
+            <li className="list-item">
+              <div className="list-titles">В прокате с </div>
+              <span className="list-values">15 июня </span>
+            </li>
+            <li className="list-item">
+              <div className="list-titles">Хронометраж </div>
+              <span className="list-values">
+                1 час 33 минуты(+21 мин. ролики){" "}
+              </span>
+            </li>
+            <li className="list-item">
+              <div className="list-titles">Режиссер </div>
+              <span className="list-values">Питер Сон</span>
+            </li>
+            <li className="list-item">
+              <div className="list-titles">В ролях </div>
+              <span className="list-values">
+                Леа Льюис, Мамуду Ати, Роналдо Дель Кармен, Шила Омми, Венди
+                Маклендон-Кови, Кэтрин О’Хара, Джо Пера, Мэттью Ян Кинг,
+                Инносент Экакити
+              </span>
+            </li>
+
+            <span className="list-values" style={{ fontSize: "1.5vw" }}>
+              В Городе Стихий обитатели огня, воды, земли и воздуха живут
+              вместе. У сильной и вспыльчивой Эмбер завязывается дружба с
+              расслабленным, плывущим по течению Уэйдом — дружба, которая бросит
+              вызов её представлениям о мире вокруг.
+            </span>
+          </ul>
         </div>
       </div>
     </div>
