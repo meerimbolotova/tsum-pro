@@ -1,24 +1,25 @@
-import React from "react";
-import HomePage from "../pages/HomePage";
-import { Route, Routes } from "react-router-dom";
-import AdminPage from "../pages/AdminPage";
-import TicketsDetails from "../components/Details/TicketsDetails";
-import Feedback from "../components/Feedback/Feedback";
-import Contact from "../components/Contact/Contact";
-import TicketRefund from "../components/TicketRefund/TicketRefund";
-import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
+import React from 'react';
+import HomePage from '../pages/HomePage';
+import { Route, Routes } from 'react-router-dom';
+import AdminPage from '../pages/AdminPage';
+import Feedback from '../components/Feedback/Feedback';
+import Contact from '../components/Contact/Contact';
+import TicketRefund from '../components/TicketRefund/TicketRefund';
+import Login from '../components/auth/Login';
+import Register from '../components/auth/Register';
+import New from '../components/New';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
-    { link: "/", element: <HomePage /> },
-    { link: "/admin", element: <AdminPage /> },
-    { link: "/feedback", element: <Feedback /> },
-    { link: "/contact", element: <Contact /> },
-    { link: "/ticketrefund", element: <TicketRefund /> },
-    { link: "/login", element: <Login /> },
-    { link: "/admin", element: <AdminPage /> },
-    { link: "/register", element: <Register /> },
+    { link: '/', element: <HomePage /> },
+    { link: '/admin', element: <AdminPage /> },
+    { link: '/feedback', element: <Feedback /> },
+    { link: '/contact', element: <Contact /> },
+    { link: '/ticketrefund', element: <TicketRefund /> },
+    { link: '/login', element: <Login /> },
+    { link: '/admin', element: <AdminPage /> },
+    { link: '/modal', element: <New /> },
+    { link: '/register', element: <Register /> },
   ];
 
   return (
