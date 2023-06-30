@@ -1,53 +1,50 @@
-import React, { useState } from "react";
-import "./TicketsDetails.css";
+import React, { useState } from 'react';
+import './TicketsDetails.css';
 
 const TicketsDetails = () => {
   const [modal, setModal] = useState(false);
 
   return (
-    <div className="details">
-      <div className="details-back">
-        <div className="details-name">
-          <span className="film-name">Элементарно</span>
-          <div className="film-descr">
-            <span className="film-age">0+</span>
-            <div className="film-genre">
-              <span className="genre-city">США</span>
-              <span className="genre-list">
+    <div className='details'>
+      <div className='details-back'>
+        <div className='details-name'>
+          <span className='film-name'>Элементарно</span>
+          <div className='film-descr'>
+            <span className='film-age'>0+</span >
+            <div className='film-genre'>
+              <span className='genre-city'>США</span>
+              <span className='genre-list'>
                 Мультфильм, Фантастика, Фэнтези, Драма, Комедия, Приключения
               </span>
             </div>
           </div>
         </div>
       </div>
-      <div className="back-blur">
-        <div className="details-time">
-          <div className="details-image">
+      <div className='back-blur'>
+        <div className='details-time'>
+          <div className='details-image'>
             <img
-              src="https://ic.p24.app/unsafe/540x800/filters:quality(80)/st.p24.app/static/posters/28183/86cdb6b6-de91-4f65-a28e-4f33f1e5d5c6.png?1685890057"
-              alt=""
+              src='https://ic.p24.app/unsafe/540x800/filters:quality(80)/st.p24.app/static/posters/28183/86cdb6b6-de91-4f65-a28e-4f33f1e5d5c6.png?1685890057'
+              alt=''
             />
-            <div className="details-youtube" onClick={() => setModal(true)}>
+            <div className='details-youtube' onClick={() => setModal(true)}>
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
-                alt=""
+                src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png'
+                alt=''
               />
             </div>
             {modal ? (
-              <div className="details-video">
+              <div className='details-video'>
                 <iframe
-                  width="860"
-                  height="515"
-                  src="https://www.youtube.com/embed/ls7SJ7jneJo"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  width='860'
+                  height='515'
+                  src='https://www.youtube.com/embed/ls7SJ7jneJo'
+                  title='YouTube video player'
+                  frameborder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowfullscreen
                 ></iframe>
-                <button
-                  className="close-video-btn"
-                  onClick={() => setModal(false)}
-                >
+                <button className='close-video-btn' onClick={() => setModal(false)}>
                   X
                 </button>
               </div>
@@ -55,95 +52,91 @@ const TicketsDetails = () => {
               <></>
             )}
           </div>
-          <div className="details-navbar">
-            <div className="details-main-navbar">
-              <div className="details-days">
-                <div className="details-today days">
+          <div className='details-navbar'>
+            <div className='details-main-navbar'>
+              <div className='details-days'>
+                <div className='details-today days'>
                   <h5>Сегодня</h5>
                   <span>27 июня</span>
                 </div>
-                <div className="details-tomorrow days">
+                <div className='details-tomorrow days'>
                   <h5>Завтра</h5>
                   <span>28 июня</span>
                 </div>
               </div>
-              <div className="details-3d">
+              <div className='details-3d'>
                 <span>3D</span>
               </div>
             </div>
-            <div className="details-bord-navbar"></div>
+            <div className='details-bord-navbar'></div>
           </div>
-          <div className="halls">
-            <h5 className="details-hall">Зал 3</h5>
-            <div className="line">
+          <div className='halls'>
+            <h5 className='details-hall'>Зал 3</h5>
+            <div className='line'>
               <span></span>
             </div>
           </div>
-          <div className="time-container">
-            <div className="time-block">
-              <div className="time">10:15</div>
-              <div className="price-cont">
-                <span className="price">350c</span>
+          <div className='time-container'>
+            <div className='time-block'>
+              <div className='time'>10:15</div>
+              <div className='price-cont'>
+                <span className='price'>350c</span>
                 <br />
-                <span className="visual">3D</span>
+                <span className='visual'>3D</span>
               </div>
             </div>
-            <div className="time-block">
-              <div className="time">12:15</div>
-              <div className="price-cont">
-                <span className="price">350c</span>
+            <div className='time-block'>
+              <div className='time'>12:15</div>
+              <div className='price-cont'>
+                <span className='price'>350c</span>
                 <br />
-                <span className="visual">3D</span>
+                <span className='visual'>3D</span>
               </div>
             </div>
-            <div className="time-block">
-              <div className="time">14:15</div>
-              <div className="price-cont">
-                <span className="price">350c</span>
+            <div className='time-block'>
+              <div className='time'>14:15</div>
+              <div className='price-cont'>
+                <span className='price'>350c</span>
                 <br />
-                <span className="visual">3D</span>
+                <span className='visual'>3D</span>
               </div>
             </div>
-            <div className="time-block">
-              <div className="time">16:15</div>
-              <div className="price-cont">
-                <span className="price">350c</span>
+            <div className='time-block'>
+              <div className='time'>16:15</div>
+              <div className='price-cont'>
+                <span className='price'>350c</span>
                 <br />
-                <span className="visual">3D</span>
+                <span className='visual'>3D</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="films-details">
-          <ul className="details-list">
-            <li className="list-item">
-              <div className="list-titles">В прокате с </div>
-              <span className="list-values">15 июня </span>
+        <div className='films-details'>
+          <ul className='details-list'>
+            <li className='list-item'>
+              <div className='list-titles'>В прокате с </div>
+              <span className='list-values'>15 июня </span>
             </li>
-            <li className="list-item">
-              <div className="list-titles">Хронометраж </div>
-              <span className="list-values">
-                1 час 33 минуты(+21 мин. ролики){" "}
-              </span>
+            <li className='list-item'>
+              <div className='list-titles'>Хронометраж </div>
+              <span className='list-values'>1 час 33 минуты(+21 мин. ролики) </span>
             </li>
-            <li className="list-item">
-              <div className="list-titles">Режиссер </div>
-              <span className="list-values">Питер Сон</span>
+            <li className='list-item'>
+              <div className='list-titles'>Режиссер </div>
+              <span className='list-values'>Питер Сон</span>
             </li>
-            <li className="list-item">
-              <div className="list-titles">В ролях </div>
-              <span className="list-values">
-                Леа Льюис, Мамуду Ати, Роналдо Дель Кармен, Шила Омми, Венди
-                Маклендон-Кови, Кэтрин О’Хара, Джо Пера, Мэттью Ян Кинг,
-                Инносент Экакити
+            <li className='list-item'>
+              <div className='list-titles'>В ролях </div>
+              <span className='list-values'>
+                Леа Льюис, Мамуду Ати, Роналдо Дель Кармен, Шила Омми, Венди Маклендон-Кови, Кэтрин
+                О’Хара, Джо Пера, Мэттью Ян Кинг, Инносент Экакити
               </span>
             </li>
 
-            <span className="list-values" style={{ fontSize: "1.5vw" }}>
-              В Городе Стихий обитатели огня, воды, земли и воздуха живут
-              вместе. У сильной и вспыльчивой Эмбер завязывается дружба с
-              расслабленным, плывущим по течению Уэйдом — дружба, которая бросит
-              вызов её представлениям о мире вокруг.
+            <span className='list-values' style={{ fontSize: '1.5vw' }}>
+              В Городе Стихий обитатели огня, воды, земли и воздуха живут вместе. У сильной и
+              вспыльчивой Эмбер завязывается дружба с расслабленным, плывущим по течению Уэйдом —
+              дружба, которая бросит вызов её представлениям о мире вокруг.
             </span>
           </ul>
         </div>

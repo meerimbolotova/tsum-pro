@@ -7,6 +7,7 @@ import Contact from '../components/Contact/Contact';
 import TicketRefund from '../components/TicketRefund/TicketRefund';
 import Login from '../components/auth/Login';
 import Register from '../components/auth/Register';
+import TicketsDetails from '../components/Details/TicketsDetails';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
