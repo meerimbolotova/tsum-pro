@@ -4,6 +4,7 @@
   position: fixed;
   z-index: 9999;
   flex-direction: column;
+  z-index: 10;
 }
 
 .navbar-main {

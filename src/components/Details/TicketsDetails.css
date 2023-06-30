@@ -179,6 +179,55 @@ span {
   color: aliceblue;
   font-family: "Montserrat", sans-serif;
 }
+
+/* =====================modal======================= */
+.modal-place {
+  margin: "0 auto";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 11;
+}
+.modal-btn-setShow {
+  color: aqua;
+}
+.modal-place-block {
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.modal-btn-places {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+}
+.modal-buttons {
+  width: 9%;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  margin: 3px;
+  color: gray;
+}
+
+.modal-buttons:hover {
+  background-color: orange;
+
+  color: red;
+  font-size: medium;
+  font-weight: bolder;
+}
+
 .details-youtube {
   width: 4%;
   position: absolute;
