@@ -129,8 +129,12 @@ const TicketsDetails = () => {
                     </div>
                     <div className="modal-btn-places">
                       <div className="modal-row">3</div>
+
                       {seats().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <input
+                          type="checkbox"
+                          className="modal-buttons"
+                        ></input>
                       ))}
                       <div className="modal-row">3</div>
                     </div>{" "}
