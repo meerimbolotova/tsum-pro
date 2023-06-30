@@ -14,7 +14,6 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(rebger);
   return (
     <div className="home__container">
       <div className="qwer">
