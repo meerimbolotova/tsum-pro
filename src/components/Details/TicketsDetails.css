@@ -1,3 +1,6 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
 .details {
   padding-top: 5%;
 }
@@ -61,9 +64,13 @@
   margin-left: 1%;
   opacity: 0.3;
 }
+.halls {
+  display: flex;
+  margin-top: 5%;
+}
 .details-hall {
   font-size: 1.5vw;
-  margin-left: 5%;
+  margin-left: 25%;
   width: 5%;
   color: #ffffff;
   opacity: 0.9;
@@ -78,9 +85,145 @@
   left: 1%;
 }
 .back-blur {
+  background-image: url("https://fons.pibig.info/uploads/posts/2023-05/1685564759_fons-pibig-info-p-zadnii-fon-serii-6.jpg");
   width: 100%;
   height: 100vw;
-  background-color: rgb(168, 181, 192, 0.5);
+  /* background-color: rgba(29, 30, 31, 0.5); */
   /* backdrop-filter: blur(20px); */
 }
 /* ----------------------------------------------- */
+.details-navbar {
+  width: 70%;
+  height: 5vw;
+  position: absolute;
+  left: 25%;
+  top: 105%;
+}
+.details-main-navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 4vw;
+  border-top: 3px solid #d39742;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.details-bord-navbar {
+  width: 95%;
+  height: 5px;
+  margin: auto;
+  background-color: #00000054;
+}
+.days {
+  width: 45%;
+  padding-top: 6%;
+  text-align: center;
+  background-color: #d39742;
+  cursor: pointer;
+  transition: all 400ms;
+}
+.days:hover {
+  background-color: #ba8939;
+}
+.details-days {
+  position: absolute;
+  width: 25%;
+  display: flex;
+  height: 6vw;
+  top: -12%;
+  justify-content: space-between;
+}
+.days > h5,
+span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2vw;
+  color: black;
+  opacity: 0.8;
+}
+.details-3d {
+  margin-left: 90%;
+  padding-top: 1%;
+}
+.details-3d > span {
+  color: #d39742;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5vw;
+}
+.time-container {
+  width: 50%;
+  margin: 1% 31%;
+  display: flex;
+  justify-content: space-between;
+}
+.time-block {
+  display: flex;
+}
+.time {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3vw;
+  color: #d39742;
+  cursor: pointer;
+  transition: all 400ms;
+}
+.price-cont {
+  padding-top: 2%;
+  padding-left: 2%;
+}
+.time:hover {
+  color: #dad5cd;
+}
+.price-cont > span {
+  font-size: 1vw;
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+}
+.details-youtube {
+  width: 4%;
+  position: absolute;
+  top: 162%;
+  left: 16%;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.details-youtube > img {
+  width: 100%;
+}
+.details-video {
+  position: absolute;
+  z-index: 15;
+  width: 70%;
+  left: 20%;
+}
+.close-video-btn {
+  position: absolute;
+  top: 1%;
+  right: 10%;
+}
+.films-details {
+  width: 70%;
+  margin-left: 25%;
+  margin-top: 4%;
+}
+.list-item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2%;
+  list-style-type: none;
+  border-bottom: 1px solid grey;
+}
+.list-titles {
+  width: 20%;
+  font-size: 1vw;
+  font-weight: 500;
+  color: aliceblue;
+  opacity: 0.5;
+}
+.list-values {
+  margin-left: 5%;
+  width: 60%;
+  color: rgb(252, 252, 252);
+  opacity: 1;
+}

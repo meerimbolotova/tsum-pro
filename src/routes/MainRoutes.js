@@ -18,8 +18,8 @@ const MainRoutes = () => {
     { link: '/ticketrefund', element: <TicketRefund /> },
     { link: '/login', element: <Login /> },
     { link: '/admin', element: <AdminPage /> },
-    { link: '/modal', element: <New /> },
     { link: '/register', element: <Register /> },
+    { link: '/details', element: <TicketsDetails /> },
   ];
 
   return (
