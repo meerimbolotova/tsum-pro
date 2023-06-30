@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCards } from '../../stores/cards/cardAction';
 
 const Card = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCards());
-  }, []);
-  const { cards } = useSelector(state => state.cards);
+
   return (
     <div className='body'>
       {cards.map(elem => (

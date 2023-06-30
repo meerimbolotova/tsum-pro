@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Admin.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { addCinema, getCards } from '../../stores/crud/crudAction';
 
 const Admin = () => {
   const [title, setTitle] = useState('');
@@ -12,18 +15,25 @@ const Admin = () => {
   const [date, setDate] = useState('');
   const [link, setLink] = useState('');
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { data } = useSelector(state => state.cinema.allCinema);
+  console.log(data.results[0]);
+
   function handleInps() {
-    let obj = {
-      title,
-      price,
-      image,
-      descr,
-      duration,
-      director,
-      cast,
-      date,
-      link,
-    };
+    let formData = new FormData();
+    formData.append('title', title);
+    formData.append('price', price);
+    formData.append('image', image);
+    formData.append('descr', descr);
+    formData.append('duration', duration);
+    formData.append('director', director);
+    formData.append('cast', cast);
+    formData.append('date', date);
+    formData.append('link', link);
+    formData.append('title', title);
+    dispatch(addCinema({ formData, navigate }));
   }
 
   return (
@@ -75,6 +85,7 @@ const Admin = () => {
           className='inps admin__inp'
           onChange={e => setLink(e.target.value)}
         />
+
         <button className='admin__btn' onClick={handleInps}>
           ADD
         </button>
