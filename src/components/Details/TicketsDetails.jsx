@@ -14,7 +14,7 @@ const TicketsDetails = () => {
   };
   const seats2 = () => {
     let arr2 = [];
-    for (let i = 7; i > 0; i--) {
+    for (let i = 8; i > 0; i--) {
       arr2.push(i);
     }
     return arr2;
@@ -107,42 +107,55 @@ const TicketsDetails = () => {
                   </button>
                   <div className='modal-place-block'>
                     <div className='modal-btn-places'>
-                      {seats().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>
-                    <div className='modal-btn-places'>
-                      {seats().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>
-                    <div className='modal-btn-places'>
-                      {seats().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>{' '}
-                    <div className='modal-btn-places'>
-                      {seats2().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>{' '}
-                    <div className='modal-btn-places'>
-                      {seats2().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>
-                    <div className='modal-btn-places'>
-                      {seats2().map(item => (
-                        <button className='modal-buttons'>{item}</button>
-                      ))}
-                    </div>
-                    <div className='modal-btn-places'>
                       {' '}
-                      1
+                      <div className='modal-row'>1</div>
                       {seats().map(item => (
                         <button className='modal-buttons'>{item}</button>
                       ))}{' '}
-                      1
+                      <div className='modal-row'>1</div>
+                    </div>
+                    <div className='modal-btn-places'>
+                      <div className='modal-row'>2</div>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                      <div className='modal-row'>2</div>
+                    </div>
+                    <div className='modal-btn-places'>
+                      <div className='modal-row'>3</div>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                      <div className='modal-row'>3</div>
+                    </div>{' '}
+                    <div className='modal-btn-places2'>
+                      <div className='modal-row'>4</div>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                      <div className='modal-row'>4</div>
+                    </div>{' '}
+                    <div className='modal-btn-places2'>
+                      <div className='modal-row'>5</div>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                      <div className='modal-row'>5</div>
+                    </div>
+                    <div className='modal-btn-places2'>
+                      <div className='modal-row'>6</div>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                      <div className='modal-row'>6</div>
+                    </div>
+                    <div className='modal-btn-places'>
+                      {' '}
+                      <div className='modal-row'>7</div>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}{' '}
+                      <div className='modal-row'>7</div>
                     </div>
                   </div>
                 </div>
