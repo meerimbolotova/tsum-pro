@@ -2,7 +2,23 @@ import React, { useState } from 'react';
 import './TicketsDetails.css';
 
 const TicketsDetails = () => {
+  const [show, setShow] = useState(false);
   const [modal, setModal] = useState(false);
+
+  const seats = () => {
+    let arr = [];
+    for (let i = 10; i > 0; i--) {
+      arr.push(i);
+    }
+    return arr;
+  };
+  const seats2 = () => {
+    let arr2 = [];
+    for (let i = 7; i > 0; i--) {
+      arr2.push(i);
+    }
+    return arr2;
+  };
 
   return (
     <div className='details'>
@@ -10,7 +26,7 @@ const TicketsDetails = () => {
         <div className='details-name'>
           <span className='film-name'>Элементарно</span>
           <div className='film-descr'>
-            <span className='film-age'>0+</span >
+            <span className='film-age'>0+</span>
             <div className='film-genre'>
               <span className='genre-city'>США</span>
               <span className='genre-list'>
@@ -78,7 +94,63 @@ const TicketsDetails = () => {
           </div>
           <div className='time-container'>
             <div className='time-block'>
-              <div className='time'>10:15</div>
+              {/* <div className="time">10:15</div> */}
+              {/* ============================================= */}
+
+              <div className='time' onClick={() => setShow(true)}>
+                10:15
+              </div>
+              {show ? (
+                <div className='modal-place'>
+                  <button className='modal-btn-setShow' onClick={() => setShow(false)}>
+                    close
+                  </button>
+                  <div className='modal-place-block'>
+                    <div className='modal-btn-places'>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>
+                    <div className='modal-btn-places'>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>
+                    <div className='modal-btn-places'>
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>{' '}
+                    <div className='modal-btn-places'>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>{' '}
+                    <div className='modal-btn-places'>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>
+                    <div className='modal-btn-places'>
+                      {seats2().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}
+                    </div>
+                    <div className='modal-btn-places'>
+                      {' '}
+                      1
+                      {seats().map(item => (
+                        <button className='modal-buttons'>{item}</button>
+                      ))}{' '}
+                      1
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+
+              {/* ============================================= */}
               <div className='price-cont'>
                 <span className='price'>350c</span>
                 <br />
