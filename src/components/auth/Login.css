@@ -1,0 +1,42 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://lumiere-a.akamaihd.net/v1/images/pp_20cs_avatarwayofwater_herobanner_1710_0e197eab.jpeg?region=0,0,2048,878);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  height: 70vh;
+}
+
+.login-form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(0, 0, 0, 0.5);
+  width: 30%;
+  height: 45%;
+  border-radius: 15px;
+}
+
+input {
+  background-color: grey;
+  width: 55%;
+  height: 7%;
+  size: 50%;
+  font-size: 1.5em;
+}
+
+button {
+  background-color: gray;
+  width: 30%;
+  height: 10%;
+  font-size: 1.3em;
+}
+input::placeholder {
+  color: black;
+  font-size: 1.2em !important;
+  font-family: Georgia;
+}

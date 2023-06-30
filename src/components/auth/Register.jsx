@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../auth/authAction";
+import "./Register.css";
 
 export default function Register() {
   const [email, setEmail] = React.useState("");
@@ -24,34 +25,35 @@ export default function Register() {
   };
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <h2>Войти</h2>
-      <input
-        placeholder="email"
-        id="email"
-        autoComplete="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        placeholder="username"
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        placeholder="password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleSubmit}>регистрация</button>
-      <button onClick={() => navigate("/login")}>войти</button>
+    <div className="register-container">
+      <div className="register-form">
+        <h2>Войти</h2>
+        <input
+          placeholder="email"
+          id="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          placeholder="username"
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          placeholder="password"
+          type="password"
+          id="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button onClick={handleSubmit}>Регистрация</button>
+        <button onClick={() => navigate("/login")}>Войти</button>
+      </div>
     </div>
   );
 }

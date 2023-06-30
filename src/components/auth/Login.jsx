@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../auth/authAction";
+import "./Login.css";
 
 export default function Login() {
   const [username, setUsername] = React.useState("");
@@ -22,31 +23,27 @@ export default function Login() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <h2>Войти</h2>
-      <input
-        placeholder="username"
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        placeholder="password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleSubmit}>Войти</button>
-      <button onClick={() => navigate("/register")}>Регистрация</button>
-    </div>
+    <di className="login-container">
+      <div className="login-form">
+        <h2>Войти</h2>
+        <input
+          placeholder="username"
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          placeholder="password"
+          type="password"
+          id="password"
+          autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleSubmit}>Войти</button>
+        <button onClick={() => navigate("/register")}>Регистрация</button>
+      </div>
+    </di>
   );
 }
