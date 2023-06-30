@@ -1,3 +1,6 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
 .details {
   padding-top: 5%;
 }
@@ -176,6 +179,7 @@ span {
   color: aliceblue;
   font-family: "Montserrat", sans-serif;
 }
+<<<<<<< HEAD
 
 /* =====================modal======================= */
 .modal-place {
@@ -216,4 +220,53 @@ span {
   border-radius: 5px;
   background-color: gray;
   margin: 3px;
+=======
+.details-youtube {
+  width: 4%;
+  position: absolute;
+  top: 162%;
+  left: 16%;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.details-youtube > img {
+  width: 100%;
+}
+.details-video {
+  position: absolute;
+  z-index: 15;
+  width: 70%;
+  left: 20%;
+}
+.close-video-btn {
+  position: absolute;
+  top: 1%;
+  right: 10%;
+}
+.films-details {
+  width: 70%;
+  margin-left: 25%;
+  margin-top: 4%;
+}
+.list-item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2%;
+  list-style-type: none;
+  border-bottom: 1px solid grey;
+}
+.list-titles {
+  width: 20%;
+  font-size: 1vw;
+  font-weight: 500;
+  color: aliceblue;
+  opacity: 0.5;
+}
+.list-values {
+  margin-left: 5%;
+  width: 60%;
+  color: rgb(252, 252, 252);
+  opacity: 1;
+>>>>>>> 9c79b34dbfbb900ac96d3b33f95fa9c8fb7b0fab
 }

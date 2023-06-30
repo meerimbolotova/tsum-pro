@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   position: fixed;
+  z-index: 9999;
   flex-direction: column;
   z-index: 10;
 }
@@ -18,7 +19,6 @@
 
 .navbar-logo {
   width: 8%;
-
   display: flex;
   justify-content: center;
   text-align: center;
@@ -37,7 +37,7 @@
   width: 30%;
   color: #f2c18c;
   list-style-type: none;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
   align-items: center;
 }
