@@ -31,11 +31,12 @@ export default function Login() {
       }}
     >
       <div className="Box"></div>
-      <h2>Добро пожаловать!!!</h2>
+      <h2>Войти</h2>
       <input
         placeholder="username"
         type="text"
         id="username"
+        style={{ marginTop: "100px" }}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
@@ -49,9 +50,6 @@ export default function Login() {
       />
       <button onClick={handleSubmit}>Войти</button>
       <button onClick={() => navigate("/register")}>Регистрация</button>
-      <button onClick={() => navigate("/resetpassword")}>
-        не помню пароль
-      </button>
     </div>
   );
 }

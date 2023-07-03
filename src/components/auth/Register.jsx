@@ -21,56 +21,52 @@ export default function Register() {
       !password.trim()
       // !password_confirm.trim()
     ) {
-      alert("Заполните поля!");
+      alert('Заполните поля!');
       return;
     }
     let formData = new FormData();
-    formData.append("email", email);
-    formData.append("username", username);
-    formData.append("password", password);
+    formData.append('email', email);
+    formData.append('username', username);
+    formData.append('password', password);
     // formData.append("password_confirm", password_confirm);
 
     dispatch(register({ formData, navigate }));
   };
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <div className="Box"></div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className='Box'></div>
       <h2>Регистрация</h2>
       <input
-        placeholder="email"
-        id="email"
-        autoComplete="email"
+        style={{ marginTop: '100px' }}
+        placeholder='email'
+        id='email'
+        autoComplete='email'
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={e => setEmail(e.target.value)}
       />
       <input
-        placeholder="username"
-        type="text"
-        id="username"
+        placeholder='username'
+        type='text'
+        id='username'
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={e => setUsername(e.target.value)}
       />
       <input
-        placeholder="password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
+        placeholder='password'
+        type='password'
+        id='password'
+        autoComplete='current-password'
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={e => setPassword(e.target.value)}
       />
-      {/* <input
-        placeholder="confim password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
-        value={password_confirm}
-        onChange={(e) => setPassword_Confirm(e.target.value)}
-      /> */}
       <button onClick={handleSubmit}>регистрация</button>
+<<<<<<< HEAD
       <button onClick={() => navigate("/login")}>войти</button>
+=======
+      <button onClick={() => navigate('/login')}>войти</button>
+      <button onClick={() => navigate('/resetpassword')}>не помню пароль</button>
+>>>>>>> ada7043aa21d95ad1b3c426aaee226243dfc3673
     </div>
   );
 }
