@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./TicketsDetails.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getCart } from "../../stores/cards/cart/cartSlice";
 
 const TicketsDetails = () => {
   const [show, setShow] = useState(false);
@@ -19,7 +22,50 @@ const TicketsDetails = () => {
     }
     return arr2;
   };
+  // cart-start---------------------------------------------------
+  const dispatch = useDispatch();
+  const [seatArr, setSeatArr] = useState([]);
 
+  useEffect(() => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      localStorage.setItem("cart", JSON.stringify({ hall: [] }));
+      cart = { hall: [] };
+    }
+    setSeatArr([]);
+    dispatch(getCart(cart));
+  }, [show]);
+
+  const addHall = (seat, row) => {
+    let newSeat = {
+      item: seat,
+      row: row,
+    };
+
+    //  seatArr.push(newSeat) ;
+    let seatFind = seatArr.filter(
+      (elem) => elem.item === seat && elem.row === row
+    );
+    if (seatFind.length === 0) {
+      seatArr.push(newSeat);
+    } else {
+      seatArr.splice(seatArr.indexOf(newSeat), 1);
+    }
+    console.log(seatArr);
+  };
+  const addToCart = (seatCart) => {
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (!cart) {
+      localStorage.setItem("cart", JSON.stringify({ hall: [] }));
+      cart = { hall: [] };
+    }
+    seatCart.map((elem) => {
+      cart.hall.push(elem);
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setSeatArr([]);
+  };
+  // cart-end-----------------------------------------------
   return (
     <div className="details">
       <div className="details-back">
@@ -111,42 +157,100 @@ const TicketsDetails = () => {
                   >
                     close
                   </button>
+                  <button onClick={() => addToCart(seatArr)}>Buy</button>
                   <div className="modal-place-block">
                     <div className="modal-btn-places">
                       {seats().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            const row = 1;
+                            addHall(item, row);
+                      
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>
                     <div className="modal-btn-places">
                       {seats().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            // setRow(2);
+                            addHall(item);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>
                     <div className="modal-btn-places">
                       {seats().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            // setRow(3);
+                            addHall(item);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>{" "}
                     <div className="modal-btn-places">
                       {seats2().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            const row = 4;
+                            addHall(item, row);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>{" "}
                     <div className="modal-btn-places">
                       {seats2().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            // setRow(5);
+                            addHall(item);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>
                     <div className="modal-btn-places">
                       {seats2().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            // setRow(6);
+                            addHall(item);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}
                     </div>
                     <div className="modal-btn-places">
                       {" "}
                       1
                       {seats().map((item) => (
-                        <button className="modal-buttons">{item}</button>
+                        <button
+                          className="modal-buttons"
+                          onClick={() => {
+                            // setRow(7);
+                            addHall(item);
+                          }}
+                        >
+                          {item}
+                        </button>
                       ))}{" "}
                       1
                     </div>
