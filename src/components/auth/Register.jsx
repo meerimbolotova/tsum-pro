@@ -3,11 +3,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../auth/authAction";
 import "./Register.css";
+import { useState } from "react";
 
 export default function Register() {
-  const [email, setEmail] = React.useState("");
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   // const [password_confirm, setPassword_Confirm] = React.useState("");
 
   const dispatch = useDispatch();
@@ -70,9 +71,6 @@ export default function Register() {
       /> */}
       <button onClick={handleSubmit}>регистрация</button>
       <button onClick={() => navigate("/login")}>войти</button>
-      <button onClick={() => navigate("/resetpassword")}>
-        не помню пароль
-      </button>
     </div>
   );
 }

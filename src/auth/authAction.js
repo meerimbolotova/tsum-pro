@@ -82,7 +82,7 @@ export const resetpassword = createAsyncThunk(
         formData
       );
       console.log(res);
-      navigate("/resetpasswordconf");
+      navigate("/");
     } catch (error) {
       console.log(error.response.data);
     }
