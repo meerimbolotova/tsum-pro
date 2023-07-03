@@ -8,8 +8,9 @@ import TicketRefund from '../components/TicketRefund/TicketRefund';
 import Login from '../components/auth/Login';
 import Register from '../components/auth/Register';
 import TicketsDetails from '../components/Details/TicketsDetails';
-import PosterPage from '../pages/PosterPage';
-import EditCardPage from '../pages/EditCardPage';
+import ResetePassword from '../components/auth/ResetePassword';
+import ResetePasswordConf from '../components/auth/ResetePasswordConf';
+import Activation from '../components/auth/Activation';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -22,8 +23,9 @@ const MainRoutes = () => {
     { link: '/admin', element: <AdminPage /> },
     { link: '/register', element: <Register /> },
     { link: '/details', element: <TicketsDetails /> },
-    { link: '/poster', element: <PosterPage /> },
-    { link: '/edit/:id', element: <EditCardPage /> },
+    { link: '/resetpassword', element: <ResetePassword /> },
+    { link: '/resetpasswordconf/', element: <ResetePasswordConf /> },
+    { link: '/activate', element: <Activation /> },
   ];
 
   return (

@@ -73,4 +73,36 @@ export const logout = createAsyncThunk(
   }
 );
 
+export const resetpassword = createAsyncThunk(
+  "@auth/resetpassword",
+  async ({ formData, navigate }) => {
+    try {
+      const res = await axios.post(
+        `${API_AUTH}users/reset_password/`,
+        formData
+      );
+      console.log(res);
+      navigate("/resetpasswordconf");
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  }
+);
+
+export const resetpasswordconf = createAsyncThunk(
+  "@auth/resetpasswordconf",
+  async ({ formData, navigate }) => {
+    try {
+      const res = await axios.post(
+        `${API_AUTH}users/reset_password_confirm/`,
+        formData
+      );
+      console.log(res);
+      navigate("/login");
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  }
+);
+
 //123456AA#

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../auth/authAction';
+import './Login.css';
 
 export default function Login() {
   const [username, setUsername] = React.useState('');
@@ -29,6 +30,7 @@ export default function Login() {
         alignItems: 'center',
       }}
     >
+      <div className='Box'></div>
       <h2>Войти</h2>
       <input
         placeholder='username'
