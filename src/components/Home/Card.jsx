@@ -11,7 +11,12 @@ const Card = () => {
   useEffect(() => {
     dispatch(getCards());
   }, []);
+
+  useEffect(() => {
+    dispatch(getCinemas());
+  }, []);
   const { cards } = useSelector(state => state.cards);
+  const { allCinema } = useSelector(state => state.cinema);
   return (
     <div className='body'>
       {allCinema?.map(elem => (

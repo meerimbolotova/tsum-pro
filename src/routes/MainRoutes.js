@@ -11,6 +11,7 @@ import TicketsDetails from '../components/Details/TicketsDetails';
 import ResetePassword from '../components/auth/ResetePassword';
 import ResetePasswordConf from '../components/auth/ResetePasswordConf';
 import Activation from '../components/auth/Activation';
+import EditCardPage from '../pages/EditCardPage';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -26,6 +27,7 @@ const MainRoutes = () => {
     { link: '/resetpassword', element: <ResetePassword /> },
     { link: '/resetpasswordconf/', element: <ResetePasswordConf /> },
     { link: '/activate', element: <Activation /> },
+    { link: '/edit/:id', element: <EditCardPage /> },
   ];
 
   return (

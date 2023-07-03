@@ -10,7 +10,7 @@ const EditCard = () => {
   useEffect(() => {
     dispatch(getOneCinema(id));
     dispatch(getGenres());
-  }, [id]);
+  }, []);
 
   const { genres } = useSelector(state => state.cinema);
   const { oneCinema } = useSelector(state => state.cinema);
