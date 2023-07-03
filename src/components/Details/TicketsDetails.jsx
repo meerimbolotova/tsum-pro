@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./TicketsDetails.css";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getCart } from "../../stores/cards/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getCart } from "../../stores/cart/cartSlice";
 
 const TicketsDetails = () => {
   const [show, setShow] = useState(false);
@@ -17,7 +17,7 @@ const TicketsDetails = () => {
   };
   const seats2 = () => {
     let arr2 = [];
-    for (let i = 7; i > 0; i--) {
+    for (let i = 8; i > 0; i--) {
       arr2.push(i);
     }
     return arr2;
@@ -25,7 +25,8 @@ const TicketsDetails = () => {
   // cart-start---------------------------------------------------
   const dispatch = useDispatch();
   const [seatArr, setSeatArr] = useState([]);
-
+  const { hall } = useSelector((state) => state.cart.cart);
+  console.log(hall);
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -34,24 +35,41 @@ const TicketsDetails = () => {
     }
     setSeatArr([]);
     dispatch(getCart(cart));
+    greenBtns();
   }, [show]);
+  function greenBtns() {
+    if (show) {
+      console.log(hall);
+      let cart = JSON.parse(localStorage.getItem("cart"));
+
+      cart.hall?.map((elem) => {
+        let id = String(elem.row) + String(elem.item);
+        console.log(id);
+        console.log(document.getElementById(`${id}`));
+        document.getElementById(`${id}`).className = "modal-buttons-green";
+      });
+    }
+  }
 
   const addHall = (seat, row) => {
     let newSeat = {
       item: seat,
       row: row,
+      price: 350,
     };
-
-    //  seatArr.push(newSeat) ;
+    let id = String(row) + seat;
     let seatFind = seatArr.filter(
       (elem) => elem.item === seat && elem.row === row
     );
     if (seatFind.length === 0) {
       seatArr.push(newSeat);
+      document.getElementById(`${id}`).className = "modal-buttons-red";
     } else {
       seatArr.splice(seatArr.indexOf(newSeat), 1);
+      document.getElementById(`${id}`).className = "modal-buttons";
     }
-    console.log(seatArr);
+
+    // console.log(seatArr);
   };
   const addToCart = (seatCart) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -64,7 +82,10 @@ const TicketsDetails = () => {
     });
     localStorage.setItem("cart", JSON.stringify(cart));
     setSeatArr([]);
+    dispatch(getCart(cart));
+    greenBtns();
   };
+
   // cart-end-----------------------------------------------
   return (
     <div className="details">
@@ -157,52 +178,65 @@ const TicketsDetails = () => {
                   >
                     close
                   </button>
-                  <button onClick={() => addToCart(seatArr)}>Buy</button>
+                  <button onClick={() => addToCart(seatArr)}>buy</button>
                   <div className="modal-place-block">
                     <div className="modal-btn-places">
+                      {" "}
+                      <div className="modal-row">1</div>
                       {seats().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"1" + item}
                           onClick={() => {
                             const row = 1;
                             addHall(item, row);
-                      
                           }}
                         >
                           {item}
                         </button>
-                      ))}
+                      ))}{" "}
+                      <div className="modal-rows">1</div>
                     </div>
                     <div className="modal-btn-places">
+                      <div className="modal-row">2</div>
                       {seats().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"2" + item}
                           onClick={() => {
-                            // setRow(2);
-                            addHall(item);
+                            const row = 2;
+                            addHall(item, row);
                           }}
                         >
                           {item}
                         </button>
                       ))}
+                      <div className="modal-rows">2</div>
                     </div>
                     <div className="modal-btn-places">
+                      <div className="modal-row">3</div>
+
                       {seats().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"3" + item}
                           onClick={() => {
-                            // setRow(3);
-                            addHall(item);
+                            const row = 3;
+                            addHall(item, row);
                           }}
+                          // className="modal-buttons-red"
                         >
                           {item}
                         </button>
                       ))}
+                      <div className="modal-rows">3</div>
                     </div>{" "}
-                    <div className="modal-btn-places">
+                    <div className="modal-btn-places2">
+                      <div className="modal-row">4</div>
                       {seats2().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"4" + item}
                           onClick={() => {
                             const row = 4;
                             addHall(item, row);
@@ -211,48 +245,56 @@ const TicketsDetails = () => {
                           {item}
                         </button>
                       ))}
+                      <div className="modal-rows">4</div>
                     </div>{" "}
-                    <div className="modal-btn-places">
+                    <div className="modal-btn-places2">
+                      <div className="modal-row">5</div>
                       {seats2().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"5" + item}
                           onClick={() => {
-                            // setRow(5);
-                            addHall(item);
+                            const row = 5;
+                            addHall(item, row);
                           }}
                         >
                           {item}
                         </button>
                       ))}
+                      <div className="modal-rows">5</div>
                     </div>
-                    <div className="modal-btn-places">
+                    <div className="modal-btn-places2">
+                      <div className="modal-row">6</div>
                       {seats2().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"6" + item}
                           onClick={() => {
-                            // setRow(6);
-                            addHall(item);
+                            const row = 6;
+                            addHall(item, row);
                           }}
                         >
                           {item}
                         </button>
                       ))}
+                      <div className="modal-rows">6</div>
                     </div>
                     <div className="modal-btn-places">
                       {" "}
-                      1
+                      <div className="modal-row">7</div>
                       {seats().map((item) => (
                         <button
                           className="modal-buttons"
+                          id={"7" + item}
                           onClick={() => {
-                            // setRow(7);
-                            addHall(item);
+                            const row = 7;
+                            addHall(item, row);
                           }}
                         >
                           {item}
                         </button>
                       ))}{" "}
-                      1
+                      <div className="modal-rows">7</div>
                     </div>
                   </div>
                 </div>

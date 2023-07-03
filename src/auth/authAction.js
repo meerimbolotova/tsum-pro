@@ -7,7 +7,7 @@ export const register = createAsyncThunk(
   "@auth/register",
   async ({ formData, navigate }) => {
     try {
-      const res = await axios.post(`${API_AUTH}registration/`, formData);
+      const res = await axios.post(`${API_AUTH}users/`, formData);
       console.log(res);
       navigate("/login");
     } catch (error) {
@@ -32,7 +32,7 @@ export const login = createAsyncThunk(
   "@auth/login",
   async ({ formData, navigate, username }) => {
     try {
-      const token = await axios.post(`${API_AUTH}login/`, formData);
+      const token = await axios.post(`${API_AUTH}jwt/create/`, formData);
       localStorage.setItem("token", JSON.stringify(token.data));
       localStorage.setItem("username", JSON.stringify(username));
       navigate("/");
