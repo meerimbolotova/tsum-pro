@@ -25,8 +25,8 @@ const TicketsDetails = () => {
   // cart-start---------------------------------------------------
   const dispatch = useDispatch();
   const [seatArr, setSeatArr] = useState([]);
-  const { hall } = useSelector((state) => state.cart.cart);
-  console.log(hall);
+  // const { hall } = useSelector((state) => state.cart.cart);
+  // console.log(hall);
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -39,7 +39,7 @@ const TicketsDetails = () => {
   }, [show]);
   function greenBtns() {
     if (show) {
-      console.log(hall);
+      // console.log(hall);
       let cart = JSON.parse(localStorage.getItem("cart"));
 
       cart.hall?.map((elem) => {
