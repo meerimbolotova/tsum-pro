@@ -8,6 +8,8 @@ import TicketRefund from '../components/TicketRefund/TicketRefund';
 import Login from '../components/auth/Login';
 import Register from '../components/auth/Register';
 import TicketsDetails from '../components/Details/TicketsDetails';
+import PosterPage from '../pages/PosterPage';
+import EditCardPage from '../pages/EditCardPage';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -20,6 +22,8 @@ const MainRoutes = () => {
     { link: '/admin', element: <AdminPage /> },
     { link: '/register', element: <Register /> },
     { link: '/details', element: <TicketsDetails /> },
+    { link: '/poster', element: <PosterPage /> },
+    { link: '/edit/:id', element: <EditCardPage /> },
   ];
 
   return (

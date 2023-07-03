@@ -57,14 +57,6 @@ export default function Register() {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
-      {/* <input
-        placeholder="confim password"
-        type="password"
-        id="password"
-        autoComplete="current-password"
-        value={password_confirm}
-        onChange={(e) => setPassword_Confirm(e.target.value)}
-      /> */}
       <button onClick={handleSubmit}>регистрация</button>
       <button onClick={() => navigate('/login')}>войти</button>
     </div>

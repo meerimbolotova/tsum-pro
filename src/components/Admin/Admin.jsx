@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Admin.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addCinema, getCards } from '../../stores/crud/crudAction';
+import { addCinema, getCinemas, getGenres } from '../../stores/crud/crudAction';
 
 const Admin = () => {
   const [title, setTitle] = useState('');
@@ -14,25 +14,29 @@ const Admin = () => {
   const [cast, setCast] = useState('');
   const [date, setDate] = useState('');
   const [link, setLink] = useState('');
+  const [genre, setGenres] = useState('');
+
+  useEffect(() => {
+    dispatch(getGenres());
+  }, []);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const { data } = useSelector(state => state.cinema.allCinema);
-  console.log(data.results[0]);
+  const { genres } = useSelector(state => state.cinema);
 
   function handleInps() {
     let formData = new FormData();
     formData.append('title', title);
     formData.append('price', price);
     formData.append('image', image);
-    formData.append('descr', descr);
+    formData.append('description', descr);
     formData.append('duration', duration);
     formData.append('director', director);
     formData.append('cast', cast);
-    formData.append('date', date);
+    formData.append('release_date', date);
     formData.append('link', link);
     formData.append('title', title);
+    formData.append('genres', genre);
     dispatch(addCinema({ formData, navigate }));
   }
 
@@ -85,7 +89,13 @@ const Admin = () => {
           className='inps admin__inp'
           onChange={e => setLink(e.target.value)}
         />
-
+        <select name='genres' className='inps'>
+          {genres?.map(elem => (
+            <option key={elem.title} value='elem.title' onChange={e => setGenres(e.target.value)}>
+              {elem.title}
+            </option>
+          ))}
+        </select>
         <button className='admin__btn' onClick={handleInps}>
           ADD
         </button>

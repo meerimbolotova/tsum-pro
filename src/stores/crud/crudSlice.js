@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addCinema, getCards } from './crudAction';
+import { getCinemas, getGenres, getOneCinema, oneCinema } from './crudAction';
 
 const initialState = {
   allCinema: [],
-  oneCinema: null,
+  oneCinema: {},
+  genres: [],
 };
 
 export const crudSlice = createSlice({
@@ -12,11 +13,14 @@ export const crudSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(getCards.fulfilled, (state, action) => {
+      .addCase(getCinemas.fulfilled, (state, action) => {
         state.allCinema = action.payload;
       })
-      .addCase(addCinema.fulfilled, (state, action) => {
-        state.allCinema.push(action.payload);
+      .addCase(getGenres.fulfilled, (state, action) => {
+        state.genres = action.payload;
+      })
+      .addCase(getOneCinema.fulfilled, (state, action) => {
+        state.oneCinema = action.payload;
       });
   },
 });

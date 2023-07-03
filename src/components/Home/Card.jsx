@@ -1,23 +1,36 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCards } from '../../stores/cards/cardAction';
+import { deleter, getCinemas } from '../../stores/crud/crudAction';
+import { useNavigate } from 'react-router-dom';
 
 const Card = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getCards());
   }, []);
-  const { cards } = useSelector(state => state.cards);
+
+  useEffect(() => {
+    dispatch(getCinemas());
+  }, []);
+
+  const { allCinema } = useSelector(state => state.cinema);
+
   return (
     <div className='body'>
-      {cards.map(elem => (
+      {allCinema?.map(elem => (
         <>
-          <div className='wrapper'>
+          <button onClick={() => dispatch(deleter({ id: elem.id, navigate }))}>Delete</button>
+          <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
+          <div className='wrapper' key={elem.id}>
             <div className='cols'>
               <div className='col' ontouchstart="this.classList.toggle('hover');">
                 <div className='container'>
                   <div className='front'>
                     <img
+                      key={elem.id}
                       src={elem.image}
                       alt='error'
                       style={{ width: '100%', maxWidth: '80rem' }}
