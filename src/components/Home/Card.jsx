@@ -8,7 +8,6 @@ const Card = () => {
     dispatch(getCards());
   }, []);
   const { cards } = useSelector((state) => state.cards);
-  console.log();
   return (
     <div className="body">
       {cards.map((elem) => (

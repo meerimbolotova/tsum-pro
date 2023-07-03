@@ -20,7 +20,6 @@ const Home = () => {
         <div className="swiper slider">
           <div className="swiper-wrapper slider__wrapper">
             <div className="swiper-slide slider-item">
-              <div className="home__title">ЦУМ СИНЕМА</div>
               <div className="slider__layer back__photo"></div>
               <div className="slider__layer person"></div>
               <div className="slider__layer middle"></div>

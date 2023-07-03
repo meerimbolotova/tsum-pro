@@ -98,6 +98,7 @@ const TicketsDetails = () => {
           <div className="time-container">
             <div className="time-block">
               {/* <div className="time">10:15</div> */}
+
               {/* ============================================= */}
 
               <div className="time" onClick={() => setShow(true)}>
@@ -131,10 +132,7 @@ const TicketsDetails = () => {
                       <div className="modal-row">3</div>
 
                       {seats().map((item) => (
-                        <input
-                          type="checkbox"
-                          className="modal-buttons"
-                        ></input>
+                        <button className="modal-buttons">{item}</button>
                       ))}
                       <div className="modal-row">3</div>
                     </div>{" "}

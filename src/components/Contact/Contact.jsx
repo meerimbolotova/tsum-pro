@@ -9,7 +9,7 @@ const Contact = () => {
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5847.686474679603!2d74.61134877016701!3d42.87615279959249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7c0cdbbae15%3A0xa6b565413fa531df!2sZUM%20Aichurok!5e0!3m2!1sen!2skg!4v1687722914760!5m2!1sen!2skg"
         style={{
           width: "100%",
-          height: "600px",
+          height: "300px",
           style: "border:0;",
           allowfullscreen: "",
           loading: "lazy",
@@ -30,12 +30,36 @@ const Contact = () => {
             ></textarea>
           </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <input type="checkbox" />
-          <p>Я принимаю условия пользовательского соглашения</p>
-        </div>
-        <div>
-          <button>Отправить</button>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "30%",
+            margin: "auto",
+          }}
+        >
+          <div style={{ display: "flex", marginBottom: "2%" }}>
+            <input type="checkbox" />
+            <h5 style={{ color: "white", textAlign: "center" }}>
+              Я принимаю условия пользовательского соглашения
+            </h5>
+          </div>
+
+          <button
+            style={{
+              width: "50%",
+              alignSelf: "center",
+              marginBottom: "2%",
+              backgroundColor: "#d39742",
+              border: "none",
+              borderRadius: "15px",
+              color: "white",
+              fontSize: "1.1em",
+              fontWeight: "bold",
+            }}
+          >
+            Отправить
+          </button>
         </div>
       </div>
     </div>

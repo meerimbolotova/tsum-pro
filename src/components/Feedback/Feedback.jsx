@@ -8,10 +8,10 @@ const Feedback = () => {
       <div className="feedback-container">
         <div className="feedback-text">
           <h2>Обратная связь</h2>
-          <p>
+          <h3>
             Просим не высылать многократно запрос, абсолютно все запросы
             обрабатываются в порядке очереди и это требует времени.
-          </p>
+          </h3>
         </div>
         <div className="feedback-form">
           <div className="feedback-block">
@@ -27,12 +27,36 @@ const Feedback = () => {
               ></textarea>
             </div>
           </div>
-          <div style={{ display: "flex" }}>
-            <input type="checkbox" />
-            <p>Я принимаю условия пользовательского соглашения</p>
-          </div>
-          <div>
-            <button>Отправить</button>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "30%",
+              margin: "auto",
+            }}
+          >
+            <div style={{ display: "flex", marginBottom: "2%" }}>
+              <input type="checkbox" style={{ width: "30px" }} />
+              <h5 style={{ color: "white", textAlign: "center" }}>
+                Я принимаю условия пользовательского соглашения
+              </h5>
+            </div>
+
+            <button
+              style={{
+                width: "50%",
+                alignSelf: "center",
+                marginBottom: "2%",
+                backgroundColor: "#d39742",
+                border: "none",
+                borderRadius: "15px",
+                color: "white",
+                fontSize: "1.1em",
+                fontWeight: "bold",
+              }}
+            >
+              Отправить
+            </button>
           </div>
         </div>
       </div>
