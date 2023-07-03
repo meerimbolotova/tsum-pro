@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  height: 60px;
+  height: 80px;
 }
 .feedback-container {
   display: flex;
@@ -10,9 +10,11 @@
   background: gray;
 }
 .feedback-text {
-  width: 100%;
+  width: 95%;
   display: flex;
   align-self: flex-start;
+  flex-direction: column;
+  margin: auto;
 }
 .feedback-form {
   width: 96%;

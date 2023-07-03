@@ -2,6 +2,7 @@ import * as React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../auth/authAction";
+import "./Register.css";
 
 export default function Register() {
   const [email, setEmail] = React.useState("");
@@ -35,7 +36,8 @@ export default function Register() {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <h2>Войти</h2>
+      <div className="Box"></div>
+      <h2>Регистрация</h2>
       <input
         placeholder="email"
         id="email"
@@ -68,6 +70,9 @@ export default function Register() {
       /> */}
       <button onClick={handleSubmit}>регистрация</button>
       <button onClick={() => navigate("/login")}>войти</button>
+      <button onClick={() => navigate("/resetpassword")}>
+        не помню пароль
+      </button>
     </div>
   );
 }
