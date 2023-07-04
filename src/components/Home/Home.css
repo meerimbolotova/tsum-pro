@@ -3,6 +3,7 @@
 }
 
 .qwer {
+  margin-bottom: 300px;
   min-height: 100vh;
 }
 
@@ -33,18 +34,21 @@
 .person {
   background-image: url(./images/last-layer.png);
   transform: translate3d(0, calc(var(--scrollTop) / 3), 0);
+
   z-index: 2;
 }
 
 .middle {
   background-image: url(./images/movie_spider_man_into_the_spider_verse_gwen_stacy_spider_man_477881.png);
   transform: translate3d(0, calc(var(--scrollTop) / 9.5), 0);
+
   z-index: 2;
 }
 
 .front__photo {
   background-image: url(./images/layer-middle.png);
   transform: translate3d(0, calc(var(--scrollTop) / 9.5), 0);
+
   z-index: 2;
 }
 

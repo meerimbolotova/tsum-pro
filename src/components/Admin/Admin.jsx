@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Admin.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addCinema, getCinemas, getGenres } from '../../stores/crud/crudAction';
+import { addCinema, getGenres } from '../../stores/crud/crudAction';
 
 const Admin = () => {
   const [title, setTitle] = useState('');
