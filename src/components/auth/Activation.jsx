@@ -20,15 +20,16 @@ const Activation = () => {
   }, []);
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
+    <div className="activation-container">
       <div className="Box"></div>
-      <h3>Добро пожаловать!!!</h3>
-      <h4>Вы активированы</h4>
-      <h4>нажмите на кнопку Войти</h4>
-
-      <button onClick={() => navigate("/login")}>Войти</button>
+      <div className="activation-form">
+        <h2 className="activation-title">Добро пожаловать!!!</h2>
+        <h4 className="activation-text">Вы активированы</h4>
+        <h4 className="activation-text">нажмите на кнопку Войти</h4>
+        <button className="activation-btn" onClick={() => navigate("/login")}>
+          Войти
+        </button>
+      </div>
     </div>
   );
 };
