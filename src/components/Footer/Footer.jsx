@@ -56,10 +56,10 @@ const Footer = () => {
         </div>
         <div className="end-footer">
           <div className="footer-end-left">
-            <h4 className="footer-end-text">TSUM cinema © 2023</h4>
+            <h5 className="footer-end-text">TSUM cinema © 2023</h5>
           </div>
           <div className="footer-end-right">
-            <h4 className="footer-end-text">Powered by p24.app</h4>
+            <h5 className="footer-end-text">Powered by p24.app</h5>
           </div>
         </div>
       </div>
