@@ -1,33 +1,33 @@
-import React from 'react';
-import HomePage from '../pages/HomePage';
-import { Route, Routes } from 'react-router-dom';
-import AdminPage from '../pages/AdminPage';
-import Feedback from '../components/Feedback/Feedback';
-import Contact from '../components/Contact/Contact';
-import TicketRefund from '../components/TicketRefund/TicketRefund';
-import Login from '../components/auth/Login';
-import Register from '../components/auth/Register';
-import TicketsDetails from '../components/Details/TicketsDetails';
-import ResetePassword from '../components/auth/ResetePassword';
-import ResetePasswordConf from '../components/auth/ResetePasswordConf';
-import Activation from '../components/auth/Activation';
-import EditCardPage from '../pages/EditCardPage';
+import React from "react";
+import HomePage from "../pages/HomePage";
+import { Route, Routes } from "react-router-dom";
+import AdminPage from "../pages/AdminPage";
+import Feedback from "../components/Feedback/Feedback";
+import Contact from "../components/Contact/Contact";
+import TicketRefund from "../components/TicketRefund/TicketRefund";
+import Login from "../components/auth/Login";
+import Register from "../components/auth/Register";
+import TicketsDetails from "../components/Details/TicketsDetails";
+import ResetePassword from "../components/auth/ResetePassword";
+import ResetePasswordConf from "../components/auth/ResetePasswordConf";
+import Activation from "../components/auth/Activation";
+import EditCardPage from "../pages/EditCardPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
-    { link: '/', element: <HomePage /> },
-    { link: '/admin', element: <AdminPage /> },
-    { link: '/feedback', element: <Feedback /> },
-    { link: '/contact', element: <Contact /> },
-    { link: '/ticketrefund', element: <TicketRefund /> },
-    { link: '/login', element: <Login /> },
-    { link: '/admin', element: <AdminPage /> },
-    { link: '/register', element: <Register /> },
-    { link: '/details', element: <TicketsDetails /> },
-    { link: '/resetpassword', element: <ResetePassword /> },
-    { link: '/resetpasswordconf/', element: <ResetePasswordConf /> },
-    { link: '/activate', element: <Activation /> },
-    { link: '/edit/:id', element: <EditCardPage /> },
+    { link: "/", element: <HomePage /> },
+    { link: "/admin", element: <AdminPage /> },
+    { link: "/feedback", element: <Feedback /> },
+    { link: "/contact", element: <Contact /> },
+    { link: "/ticketrefund", element: <TicketRefund /> },
+    { link: "/login", element: <Login /> },
+    { link: "/admin", element: <AdminPage /> },
+    { link: "/register", element: <Register /> },
+    { link: "/details/:id", element: <TicketsDetails /> },
+    { link: "/resetpassword", element: <ResetePassword /> },
+    { link: "/resetpasswordconf/", element: <ResetePasswordConf /> },
+    { link: "/activate", element: <Activation /> },
+    { link: "/edit/:id", element: <EditCardPage /> },
   ];
 
   return (
