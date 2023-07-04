@@ -1,43 +1,48 @@
 import React from "react";
 import "./ResetePassword.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resetpassword } from "../../auth/authAction";
+import { useState } from "react";
 
 const ResetePassword = () => {
-  const [email, setEmail] = React.useState("");
-
+  const [email, setEmail] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    if (!email.trim()) {
-      alert("Заполните поля!");
-      return;
-    }
     let formData = new FormData();
     formData.append("email", email);
 
     dispatch(resetpassword({ formData, navigate }));
   };
 
-  return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <div className="Box"></div>
-      <h2>Сброс пароля</h2>
-      <input
-        placeholder="введите email"
-        id="email"
-        autoComplete="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+  const error = useSelector((state) => state.auth.error);
+  console.log(error);
 
-      <button onClick={handleSubmit}>отправить</button>
+  return (
+    <div className="reset-container">
+      <div className="Box"></div>
+      <div className="reset-form">
+        <h2 className="reset-title">Сброс пароля</h2>
+        <span className="reset-text">
+          Введите email и нажмите отправить для сброса пароля, далее проверьте
+          почту.
+        </span>
+        <input
+          className="reset-inp"
+          placeholder="введите email"
+          id="email"
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {error.email ? <h5 className="reset-error">{error.email[0]}</h5> : ""}
+        <button className="reset-btn" onClick={handleSubmit}>
+          отправить
+        </button>
+      </div>
     </div>
   );
 };
-
 export default ResetePassword;
