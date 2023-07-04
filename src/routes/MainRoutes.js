@@ -6,8 +6,6 @@ import TicketsDetails from "../components/Details/TicketsDetails";
 import Feedback from "../components/Feedback/Feedback";
 import Contact from "../components/Contact/Contact";
 import TicketRefund from "../components/TicketRefund/TicketRefund";
-import Login from "../components/auth/Login";
-import Register from "../components/auth/Register";
 import NotFoundPage from "../components/notFound/NotFoundPage";
 
 const MainRoutes = () => {
@@ -17,9 +15,7 @@ const MainRoutes = () => {
     { link: "/feedback", element: <Feedback /> },
     { link: "/contact", element: <Contact /> },
     { link: "/ticketrefund", element: <TicketRefund /> },
-    { link: "/login", element: <Login /> },
     { link: "/admin", element: <AdminPage /> },
-    { link: "/register", element: <Register /> },
     { link: "/*", element: <NotFoundPage /> },
   ];
 

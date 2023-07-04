@@ -4,6 +4,10 @@ import "./NotFoundPage.css";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
+  setTimeout(() => {
+    navigate("/");
+  }, 10000);
+
   return (
     <div className="body">
       <section class="notFound">
@@ -21,11 +25,11 @@ const NotFoundPage = () => {
             YES
           </button>
           <div class="m-initialScene-text"></div>
-          <div>
-            <p>Таймер обратного отсчета</p>
-            <p>Осталось секунд</p>
+          <div class="countdown">
+            <small>До перехода на главную осталось</small>
+            <span>4</span>
+            <small>секунды</small>
           </div>
-          ;
         </div>
       </section>
     </div>
