@@ -1,13 +1,13 @@
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .details {
   padding-top: 5%;
 }
 
 .details-back {
-  background-image: url('https://ic.p24.app/unsafe/1600x700/smart/filters:quality(80)/cdn.p24.app/r/sc/ru/5b/5b6927e6-db8f-4158-b4a1-1a7b5db1bee5/c8ab1d31-c94f-44fd-97a4-2a3774a3fe62.jpg');
-  height: 100vh;
+  background-image: url("https://fons.pibig.info/uploads/posts/2023-05/1685564759_fons-pibig-info-p-zadnii-fon-serii-6.jpg");
+  height: 32vh;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,10 +19,15 @@
 }
 .film-name {
   background-color: #d39742;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 2.5vw;
   font-weight: 700;
   padding: 0.3%;
+  margin-left: 1%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  opacity: 0.8;
 }
 .film-descr {
   display: flex;
@@ -34,24 +39,24 @@
   background-color: #5c8a00;
   color: white;
   border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0.2%;
 }
 .film-genre {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   font-size: 0.8vw;
   color: white;
   padding: 0.3%;
-  background-color: rgb(21, 18, 18);
+  /* background-color: #d39742; */
 }
 .genre-city {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: auto;
 }
 .genre-list {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .details-time {
   display: flex;
@@ -67,7 +72,7 @@
 }
 .halls {
   display: flex;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 .details-hall {
   font-size: 1.5vw;
@@ -82,13 +87,14 @@
 .details-image > img {
   width: 20%;
   position: absolute;
-  top: 105%;
+  top: 38%;
   left: 1%;
 }
 .back-blur {
-  background-image: url('https://fons.pibig.info/uploads/posts/2023-05/1685564759_fons-pibig-info-p-zadnii-fon-serii-6.jpg');
+  background-image: url("https://fons.pibig.info/uploads/posts/2023-05/1685564759_fons-pibig-info-p-zadnii-fon-serii-6.jpg");
   width: 100%;
-  height: 100vw;
+  height: auto;
+  padding-bottom: 10%;
 }
 /* ----------------------------------------------- */
 .details-navbar {
@@ -96,7 +102,7 @@
   height: 5vw;
   position: absolute;
   left: 25%;
-  top: 105%;
+  top: 38%;
 }
 .details-main-navbar {
   width: 100%;
@@ -135,7 +141,7 @@
 }
 .days > h5,
 span {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.2vw;
   color: black;
   opacity: 0.8;
@@ -146,7 +152,7 @@ span {
 }
 .details-3d > span {
   color: #d39742;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 1.5vw;
 }
@@ -160,7 +166,7 @@ span {
   display: flex;
 }
 .time {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 3vw;
   color: #d39742;
   cursor: pointer;
@@ -176,7 +182,7 @@ span {
 .price-cont > span {
   font-size: 1vw;
   color: aliceblue;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* =====================modal======================= */
@@ -270,7 +276,7 @@ span {
 .details-youtube {
   width: 4%;
   position: absolute;
-  top: 162%;
+  top: 94%;
   left: 16%;
   cursor: pointer;
   transition: all 400ms;
@@ -314,4 +320,8 @@ span {
   width: 60%;
   color: rgb(252, 252, 252);
   opacity: 1;
+}
+.comment-block {
+  display: flex;
+  flex-direction: column;
 }
