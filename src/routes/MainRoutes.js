@@ -21,7 +21,7 @@ const MainRoutes = () => {
     { link: "/contact", element: <Contact /> },
     { link: "/ticketrefund", element: <TicketRefund /> },
     { link: "/login", element: <Login /> },
-    { link: "/admin", element: <AdminPage /> },
+    { link: "/*", element: <NotFoundPage /> },
     { link: "/register", element: <Register /> },
     { link: "/details/:id", element: <TicketsDetails /> },
     { link: "/resetpassword", element: <ResetePassword /> },
