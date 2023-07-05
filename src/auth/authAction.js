@@ -57,7 +57,7 @@ export const checkAuth = createAsyncThunk(
         "token",
         JSON.stringify({ refresh: token.refresh, access: res.data.access })
       );
-      let user = localStorage.getItem("username");
+      let user = JSON.parse(localStorage.getItem("username"));
       dispatch(setUser(user));
     } catch (error) {
       console.log(error.response.data);

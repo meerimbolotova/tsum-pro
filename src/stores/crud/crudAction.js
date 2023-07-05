@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { API_CRUD, API_GENRES } from '../../helpers/consts';
 
-function getAuth() {
+export function getAuth() {
   let token = JSON.parse(localStorage.getItem('token'));
   const Authorization = `Bearer ${token.access}`;
   const config = {
