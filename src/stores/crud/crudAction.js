@@ -41,7 +41,7 @@ export const addCinema = createAsyncThunk(
       let config = getAuth();
       await axios.post(`${API_CRUD}movies/`, formData, config);
       dispatch(getCinemas());
-      navigate('/');
+      // navigate('/');
     } catch (error) {
       console.log(error.response.data);
     }

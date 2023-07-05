@@ -15,11 +15,9 @@ const Admin = () => {
   const [date, setDate] = useState('');
   const [link, setLink] = useState('');
   const [genre, setGenre] = useState([{ title: 'action' }]);
-  console.log(genre);
 
   useEffect(() => {
     dispatch(getGenres());
-    console.log(genre);
   }, []);
 
   const dispatch = useDispatch();
@@ -39,7 +37,6 @@ const Admin = () => {
     formData.append('link', link);
     formData.append('title', title);
     formData.append('genres', genre);
-    console.log(formData);
     dispatch(addCinema({ formData, navigate }));
   }
 

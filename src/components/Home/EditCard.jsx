@@ -16,6 +16,20 @@ const EditCard = () => {
   const { oneCinema } = useSelector(state => state.cinema);
   console.log(oneCinema);
 
+  useEffect(() => {
+    if (oneCinema) {
+      setTitle(oneCinema.title);
+      setPrice(oneCinema.price);
+      setImage(oneCinema.image);
+      setDescr(oneCinema.descr);
+      setDuration(oneCinema.duration);
+      setDirector(oneCinema.director);
+      setCast(oneCinema.cast);
+      setDate(oneCinema.date);
+      setLink(oneCinema.link);
+    }
+  }, []);
+
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
