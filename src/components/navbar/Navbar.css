@@ -41,7 +41,9 @@
   cursor: pointer;
   align-items: center;
 }
-
+.hamburger-menu {
+  display: none;
+}
 .navbar-bord {
   width: 95%;
   height: 5px;
