@@ -241,3 +241,29 @@
     margin: 0 0 2rem 0;
   }
 }
+
+.pagination_btn {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pag_btn {
+  height: 65px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: red;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card_btn {
+  border-radius: 10px;
+  background-color: red;
+  color: #000;
+  font-size: 15px;
+  font-weight: 600;
+  height: 55px;
+  width: 100px;
+}

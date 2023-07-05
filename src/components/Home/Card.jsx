@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleter, getCinemas } from '../../stores/crud/crudAction';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { API_CRUD } from '../../helpers/consts';
+import { ADMIN, API_CRUD } from '../../helpers/consts';
+import Admin from '../Admin/Admin';
 
 const Card = () => {
   const dispatch = useDispatch();
@@ -51,13 +52,28 @@ const Card = () => {
     }
   };
 
+  const { user } = useSelector(state => state.auth);
+
   return (
     <div className='body'>
       {movies?.map(elem => (
         <>
-          <button onClick={() => dispatch(deleter({ id: elem.id, navigate }))}>Delete</button>
-          <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
-          <button onClick={() => navigate(`/details/${elem.id}`)}>Details</button>
+          {user == ADMIN && (
+            <>
+              <button
+                className='card_btn'
+                onClick={() => dispatch(deleter({ id: elem.id, navigate }))}
+              >
+                Delete
+              </button>
+              <button className='card_btn' onClick={() => navigate(`/edit/${elem.id}`)}>
+                Edit
+              </button>
+            </>
+          )}
+          <button className='card_btn' onClick={() => navigate(`/details/${elem.id}`)}>
+            Купить билет
+          </button>
           <div className='wrapper' key={elem.id}>
             <div className='cols'>
               <div className='col' ontouchstart="this.classList.toggle('hover');">
@@ -81,7 +97,7 @@ const Card = () => {
                     />
                     <div className='inner'>
                       <iframe
-                        width='1000'
+                        width='700'
                         height='500'
                         src={elem.link}
                         title='YouTube video player'
@@ -97,14 +113,14 @@ const Card = () => {
           </div>
         </>
       ))}
-      <div style={{ marginTop: '200px' }}>
-        <button onClick={handlePrevPage} disabled={page === 1}>
+      <div className='pagination_btn'>
+        <button onClick={handlePrevPage} disabled={page === 1} className='pag_btn'>
           Previous
         </button>
         <span style={{ color: 'white' }}>
           Page {page} of {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={page === totalPages}>
+        <button onClick={handleNextPage} disabled={page === totalPages} className='pag_btn'>
           Next
         </button>
       </div>
