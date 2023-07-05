@@ -30,8 +30,8 @@ export const postComments = createAsyncThunk(
 export const getUser = createAsyncThunk("user", async () => {
   try {
     const config = getAuth();
-    let { data } = await axios.get(`${API_AUTH}users/`, config);
-    return data.results;
+    let { data } = await axios.get(`${API_AUTH}users/me/`, config);
+    return data;
   } catch (error) {
     console.log(error.response.data);
   }
