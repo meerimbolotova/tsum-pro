@@ -13,6 +13,7 @@ const Card = () => {
   useEffect(() => {
     dispatch(getCinemas());
   }, []);
+
   const { allCinema } = useSelector(state => state.cinema);
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
@@ -22,7 +23,7 @@ const Card = () => {
   useEffect(() => {
     fetchMovies();
     dispatch(getCinemas());
-  }, [page, limit]);
+  }, [page, limit, allCinema]);
 
   const fetchMovies = async () => {
     try {
