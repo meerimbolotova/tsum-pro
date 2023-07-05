@@ -129,7 +129,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   display: block;
   opacity: 0.6;
   background-color: #000;
@@ -205,7 +205,7 @@
 }
 
 .front .inner p:after {
-  content: '';
+  content: "";
   width: 4rem;
   height: 2px;
   position: absolute;
@@ -219,7 +219,7 @@
 
 .front .inner span {
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: 300;
 }
 
@@ -248,7 +248,7 @@
   justify-content: space-between;
 }
 
-.pag_btn {
+/* .pag_btn {
   height: 65px;
   width: 150px;
   border-radius: 10px;
@@ -256,7 +256,46 @@
   color: #000;
   font-size: 20px;
   font-weight: 600;
+} */
+
+/* кнопка логин начало */
+.pag_btn {
+  width: 10%;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #d39742;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  color: #d39742;
+  transition: 0.2s ease-in-out;
 }
+.pag_btn:before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+}
+.pag_btn:hover {
+  background: #d39742;
+  color: #fff;
+}
+.pag_btn:hover:before {
+  left: 350px;
+  transition: 0.5s ease-in-out;
+}
+/* кнопка логин конец */
 
 .card_btn {
   border-radius: 10px;
