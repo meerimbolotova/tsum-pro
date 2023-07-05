@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./Navbar.css";
+import "./NavbarAdaptive.css";
+
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth, logout } from "../../auth/authAction";
@@ -58,7 +60,71 @@ const Navbar = () => {
             </a>
             <a className="navbar-a"> 0500 000 005</a>
           </div>
+          {/* ====== Start BURGER ========= */}
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <ul class="menu__box">
+              {/* =============== */}
+              {user ? (
+                <>
+                  <li>
+                    <a
+                      className="menu__item"
+                      onClick={() => dispatch(logout(navigate))}
+                    >
+                      Выйти
+                    </a>
+                  </li>
+                  {user === ADMIN && (
+                    <li>
+                      <a
+                        className="menu__item"
+                        onClick={() => navigate("/admin")}
+                      >
+                        Админ
+                      </a>
+                    </li>
+                  )}
+                </>
+              ) : (
+                <li>
+                  <a className="menu__item" onClick={() => navigate("/login")}>
+                    Войти
+                  </a>
+                </li>
+              )}
+              {/* =============== */}
+
+              <li>
+                <a class="menu__item" href="#">
+                  Сеансы
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  Афиша
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" onClick={() => navigate("/contact")}>
+                  {" "}
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  0500 000 005
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* ========= End Burger =========== */}
         </div>
+
         <div className="navbar-bord"></div>
       </div>
     </>
