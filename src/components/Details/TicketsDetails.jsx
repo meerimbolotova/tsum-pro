@@ -110,7 +110,7 @@ const TicketsDetails = () => {
     let obj = {
       content,
       movies: id,
-      author: userInfo[0].id,
+      author: userInfo.id,
     };
     dispatch(postComments(obj));
     dispatch(getComments());
@@ -442,12 +442,12 @@ const TicketsDetails = () => {
           </ul>
           {/* comment------ */}
           <div className="comment-block">
-            {comments.map((elem) => {
+            {comments?.map((elem) => {
               if (id == elem.movies) {
                 return (
                   <div key={elem.timestamp} className="comments">
                     <span>
-                      {userInfo[0].username}: {elem.content}
+                      {userInfo.username}: {elem.content}
                     </span>
                     <span>{elem.timestamp}</span>
                   </div>
