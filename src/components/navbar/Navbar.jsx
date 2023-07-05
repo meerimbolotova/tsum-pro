@@ -40,7 +40,7 @@ const Navbar = () => {
                 </a>
                 {user === ADMIN && (
                   <a className="navbar-a" onClick={() => navigate("/admin")}>
-                    АДМИН
+                    Админ
                   </a>
                 )}
               </>
