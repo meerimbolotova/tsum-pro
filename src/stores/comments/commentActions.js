@@ -18,9 +18,22 @@ export const getComments = createAsyncThunk(
 
 export const postComments = createAsyncThunk(
   "@comments/postComments",
-  async (obj) => {
+  async (obj, { dispatch }) => {
     try {
       await axios.post(API_COMMENT, obj);
+      dispatch(getComments());
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  }
+);
+
+export const deleteComments = createAsyncThunk(
+  "@comments/deleteComments",
+  async (id, { dispatch }) => {
+    try {
+      await axios.delete(API_COMMENT + id + "/");
+      dispatch(getComments());
     } catch (error) {
       console.log(error.response.data);
     }

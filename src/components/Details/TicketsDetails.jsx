@@ -6,6 +6,7 @@ import { getCart } from "../../stores/cart/cartSlice";
 import { useParams } from "react-router-dom";
 import { getOneCinema } from "../../stores/crud/crudAction";
 import {
+  deleteComments,
   getComments,
   getUser,
   postComments,
@@ -110,7 +111,7 @@ const TicketsDetails = () => {
     let obj = {
       content,
       movies: id,
-      author: userInfo.id,
+      author: userInfo.username,
     };
     dispatch(postComments(obj));
     dispatch(getComments());
@@ -447,9 +448,12 @@ const TicketsDetails = () => {
                 return (
                   <div key={elem.timestamp} className="comments">
                     <span>
-                      {userInfo.username}: {elem.content}
+                      {elem.author}: {elem.content}
                     </span>
                     <span>{elem.timestamp}</span>
+                    <button onClick={() => dispatch(deleteComments(elem.id))}>
+                      Удалить
+                    </button>
                   </div>
                 );
               }
