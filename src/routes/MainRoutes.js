@@ -12,6 +12,7 @@ import ResetePassword from "../components/auth/ResetePassword";
 import ResetePasswordConf from "../components/auth/ResetePasswordConf";
 import Activation from "../components/auth/Activation";
 import EditCardPage from "../pages/EditCardPage";
+import NotFoundPage from "../components/notFound/NotFoundPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [

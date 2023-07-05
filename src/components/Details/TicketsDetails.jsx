@@ -5,6 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCart } from "../../stores/cart/cartSlice";
 import { useParams } from "react-router-dom";
 import { getOneCinema } from "../../stores/crud/crudAction";
+import {
+  getComments,
+  getUser,
+  postComments,
+} from "../../stores/comments/commentActions";
+import axios from "axios";
 
 const TicketsDetails = () => {
   const [show, setShow] = useState(false);
@@ -15,7 +21,9 @@ const TicketsDetails = () => {
 
   useEffect(() => {
     dispatch(getOneCinema(id));
-    console.log(oneCinema);
+    dispatch(getComments());
+    dispatch(getUser());
+    // setUserId(id);
   }, []);
 
   const seats = () => {
@@ -33,10 +41,11 @@ const TicketsDetails = () => {
     return arr2;
   };
   // cart-start---------------------------------------------------
-  // const dispatch = useDispatch();
+  const { comments, userInfo } = useSelector((state) => state.comments);
+  console.log(comments);
+  console.log(userInfo);
+
   const [seatArr, setSeatArr] = useState([]);
-  // const { hall } = useSelector((state) => state.cart.cart);
-  // console.log(hall);
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -49,7 +58,6 @@ const TicketsDetails = () => {
   }, [show]);
   function greenBtns() {
     if (show) {
-      // console.log(hall);
       let cart = JSON.parse(localStorage.getItem("cart"));
 
       cart.hall?.map((elem) => {
@@ -78,8 +86,6 @@ const TicketsDetails = () => {
       seatArr.splice(seatArr.indexOf(newSeat), 1);
       document.getElementById(`${id}`).className = "modal-buttons";
     }
-
-    // console.log(seatArr);
   };
   const addToCart = (seatCart) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -97,6 +103,20 @@ const TicketsDetails = () => {
   };
 
   // cart-end-----------------------------------------------
+
+  // comments-start--------------------------------
+  const [content, setContent] = useState("");
+  function addComment() {
+    let obj = {
+      content,
+      movies: id,
+      author: userInfo[0].id,
+    };
+    dispatch(postComments(obj));
+    dispatch(getComments());
+  }
+  // comments-end--------------------------------
+
   return (
     <div className="details">
       <div className="details-back">
@@ -365,10 +385,27 @@ const TicketsDetails = () => {
               {oneCinema.description}
             </span>
           </ul>
+          {/* comment------ */}
           <div className="comment-block">
-            <span>сврыиры</span>
-            <input type="text" placeholder="комментарий" />
-            <button>Отправить</button>
+            {comments.map((elem) => {
+              if (id == elem.movies) {
+                return (
+                  <div key={elem.timestamp} className="comments">
+                    <span>
+                      {userInfo[0].username}: {elem.content}
+                    </span>
+                    <span>{elem.timestamp}</span>
+                  </div>
+                );
+              }
+            })}
+            <input
+              value={content}
+              type="text"
+              placeholder="комментарий"
+              onChange={(e) => setContent(e.target.value)}
+            />
+            <button onClick={addComment}>Отправить</button>
           </div>
         </div>
       </div>
