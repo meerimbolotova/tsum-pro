@@ -89,6 +89,7 @@ const TicketsDetails = () => {
       seatArr.splice(seatArr.indexOf(newSeat), 1);
       document.getElementById(`${id}`).className = "modal-buttons";
     }
+    setSeatCount(seatArr.length);
   };
   const addToCart = (seatCart) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -100,8 +101,6 @@ const TicketsDetails = () => {
       cart.hall.push(elem);
     });
     localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(seatCount);
-
     setSeatArr([]);
     dispatch(getCart(cart));
     greenBtns();
@@ -374,7 +373,7 @@ const TicketsDetails = () => {
                         </div>
                         <div className="modal-inner-total">
                           {" "}
-                          итого: 1200 cом
+                          итого: {seatCount * oneCinema.price} cом
                         </div>
                       </div>
                       <div className="modal-inner-button-place">
