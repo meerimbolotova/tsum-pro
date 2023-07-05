@@ -47,6 +47,7 @@ const TicketsDetails = () => {
   console.log(userInfo);
 
   const [seatArr, setSeatArr] = useState([]);
+  const [seatCount, setSeatCount] = useState(null);
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     if (!cart) {
@@ -56,6 +57,7 @@ const TicketsDetails = () => {
     setSeatArr([]);
     dispatch(getCart(cart));
     greenBtns();
+    setSeatCount(0);
   }, [show]);
   function greenBtns() {
     if (show) {
@@ -87,6 +89,7 @@ const TicketsDetails = () => {
       seatArr.splice(seatArr.indexOf(newSeat), 1);
       document.getElementById(`${id}`).className = "modal-buttons";
     }
+    setSeatCount(seatArr.length);
   };
   const addToCart = (seatCart) => {
     let cart = JSON.parse(localStorage.getItem("cart"));
@@ -115,6 +118,7 @@ const TicketsDetails = () => {
     };
     dispatch(postComments(obj));
     dispatch(getComments());
+    setContent("");
   }
   // comments-end--------------------------------
 
@@ -222,7 +226,7 @@ const TicketsDetails = () => {
                       <div className="modal-inner-info">
                         {" "}
                         <div className="modal-inner-square-gray"></div>Стандарт
-                        - 300 сом
+                        - {oneCinema.price}c
                       </div>
                       <div className="modal-inner-info">
                         {" "}
@@ -364,10 +368,12 @@ const TicketsDetails = () => {
                     {/* ======== НАЧАЛО блок выбранных мест и сумма к оплате ======== */}
                     <div className="modal-inner-info2">
                       <div className="modal-inner-price">
-                        <div className="modal-inner-seats">мест: 5</div>
+                        <div className="modal-inner-seats">
+                          мест: {seatCount}
+                        </div>
                         <div className="modal-inner-total">
                           {" "}
-                          итого: 1200 cом
+                          итого: {seatCount * oneCinema.price} cом
                         </div>
                       </div>
                       <div className="modal-inner-button-place">
@@ -443,28 +449,57 @@ const TicketsDetails = () => {
           </ul>
           {/* comment------ */}
           <div className="comment-block">
+            <h4
+              style={{
+                width: "auto",
+                fontSize: "2vw",
+                opacity: "0.7",
+                margin: "2% auto",
+              }}
+            >
+              Комментарии
+            </h4>
             {comments?.map((elem) => {
               if (id == elem.movies) {
                 return (
                   <div key={elem.timestamp} className="comments">
-                    <span>
-                      {elem.author}: {elem.content}
-                    </span>
-                    <span>{elem.timestamp}</span>
-                    <button onClick={() => dispatch(deleteComments(elem.id))}>
-                      Удалить
-                    </button>
+                    <div
+                      style={{
+                        width: "80%",
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <span>
+                        <span style={{ color: "darkblue" }}>
+                          {elem.author}:
+                        </span>{" "}
+                        {elem.content}
+                      </span>
+                      <span>{elem.timestamp}</span>
+                    </div>
+                    {elem.author == userInfo.username ? (
+                      <img
+                        onClick={() => dispatch(deleteComments(elem.id))}
+                        style={{ width: "3%" }}
+                        src="https://icons.veryicon.com/png/o/miscellaneous/intelligent-agriculture/delete-450.png"
+                        alt=""
+                      />
+                    ) : null}
                   </div>
                 );
               }
             })}
             <input
+              className="comment-inp"
               value={content}
               type="text"
               placeholder="комментарий"
               onChange={(e) => setContent(e.target.value)}
             />
-            <button onClick={addComment}>Отправить</button>
+            <button className="comment-btn" onClick={addComment}>
+              Отправить
+            </button>
           </div>
         </div>
       </div>
