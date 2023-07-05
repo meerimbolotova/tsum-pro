@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Admin.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addCinema, getCinemas, getGenres } from '../../stores/crud/crudAction';
+import { addCinema, getGenres } from '../../stores/crud/crudAction';
 
 const Admin = () => {
   const [title, setTitle] = useState('');
@@ -14,7 +14,7 @@ const Admin = () => {
   const [cast, setCast] = useState('');
   const [date, setDate] = useState('');
   const [link, setLink] = useState('');
-  const [genre, setGenres] = useState('');
+  const [genre, setGenre] = useState([{ title: 'action' }]);
 
   useEffect(() => {
     dispatch(getGenres());
@@ -89,9 +89,9 @@ const Admin = () => {
           className='inps admin__inp'
           onChange={e => setLink(e.target.value)}
         />
-        <select name='genres' className='inps'>
+        <select name='genres' className='inps' onChange={e => setGenre(e.target.value)}>
           {genres?.map(elem => (
-            <option key={elem.title} value='elem.title' onChange={e => setGenres(e.target.value)}>
+            <option key={elem.id} value={elem.title}>
               {elem.title}
             </option>
           ))}
