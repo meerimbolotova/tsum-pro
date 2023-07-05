@@ -190,14 +190,108 @@ span {
   margin: "0 auto";
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   top: 0%;
   left: 0%;
   z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+.modal-inner {
+  width: 85vw;
+  height: 80vh;
+  background-color: #434343;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-inner-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.inner-title-left,
+.inner-title-right {
+  width: 50%;
+}
+
+.modal-inner-info {
+  width: 100%;
+  background-color: black;
+  height: 50px;
+  color: #d39742;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: #ba8939 solid 1px;
+}
+.modal-inner-square-gray {
+  width: 20px;
+  height: 20px;
+  background-color: #434343;
+  margin-left: 3%;
+}
+.modal-inner-square-red {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(190, 42, 42);
+}
+.modal-inner-square-yellow {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(35, 87, 19);
+}
+.modal-inner-info1 {
+  display: flex;
+}
+
+.modal-inner-info2 {
+  width: 100%;
+  background-color: black;
+  height: 20%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: #ba8939 solid 2px;
+}
+.modal-inner-price {
+  margin-left: 1%;
+}
+.modal-inner-seats,
+.modal-inner-total {
+  color: #d39742;
+}
+.modal-inner-button-place {
+  width: 17%;
+}
+.modal-inner-button {
+  width: 90%;
+  height: 30px;
+  background-color: #d39742;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .modal-btn-setShow {
-  color: aqua;
+  position: fixed;
+  top: 6%;
+  left: 94%;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  border: none;
+  background-color: #434343;
+  color: #ba8939;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+  transition: opacity ease 0.5s;
 }
 .modal-place-block {
   width: 50vw;
@@ -213,7 +307,7 @@ span {
   width: 30vw;
   height: 5vh;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
 }
 .modal-btn-places2 {
@@ -222,7 +316,12 @@ span {
   height: 5vh;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
+}
+.modar-row-btn {
+  width: 85%;
+  display: flex;
+  justify-content: flex-start;
 }
 .modal-row {
   width: 15%;
