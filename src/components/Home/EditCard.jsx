@@ -16,20 +16,6 @@ const EditCard = () => {
   const { oneCinema } = useSelector(state => state.cinema);
   console.log(oneCinema);
 
-  useEffect(() => {
-    if (oneCinema) {
-      setTitle(oneCinema.title);
-      setPrice(oneCinema.price);
-      setImage(oneCinema.image);
-      setDescr(oneCinema.descr);
-      setDuration(oneCinema.duration);
-      setDirector(oneCinema.director);
-      setCast(oneCinema.cast);
-      setDate(oneCinema.date);
-      setLink(oneCinema.link);
-    }
-  }, []);
-
   const [title, setTitle] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
@@ -42,6 +28,19 @@ const EditCard = () => {
   const [genre, setGenres] = useState('');
 
   const navigate = useNavigate();
+  useEffect(() => {
+    if (oneCinema) {
+      setTitle(oneCinema.title);
+      setPrice(oneCinema.price);
+      setImage(oneCinema.image);
+      setDescr(oneCinema.description);
+      setDuration(oneCinema.duration);
+      setDirector(oneCinema.director);
+      setCast(oneCinema.cast);
+      setDate(oneCinema.release_date);
+      setLink(oneCinema.link);
+    }
+  }, [oneCinema]);
 
   function handleInps() {
     let formData = new FormData();
@@ -58,10 +57,6 @@ const EditCard = () => {
     formData.append('genres', genre);
     dispatch(editer({ id, formData, navigate }));
   }
-
-  // if (oneCinema) {
-  //   return <h1>Loading...</h1>;
-  // }
 
   return (
     <div>
@@ -93,7 +88,7 @@ const EditCard = () => {
             onChange={e => setDescr(e.target.value)}
           />
           <input
-            value={descr}
+            value={duration}
             placeholder='Duration'
             className='inps admin__inp'
             onChange={e => setDuration(e.target.value)}
