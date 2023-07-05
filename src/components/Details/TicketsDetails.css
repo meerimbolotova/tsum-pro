@@ -424,3 +424,9 @@ span {
   display: flex;
   flex-direction: column;
 }
+.comments {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1%;
+}
