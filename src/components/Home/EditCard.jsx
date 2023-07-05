@@ -14,17 +14,18 @@ const EditCard = () => {
 
   const { genres } = useSelector(state => state.cinema);
   const { oneCinema } = useSelector(state => state.cinema);
+  console.log(oneCinema);
 
-  const [title, setTitle] = useState(oneCinema.title);
-  const [price, setPrice] = useState(oneCinema.price);
-  const [image, setImage] = useState(oneCinema.image);
-  const [descr, setDescr] = useState(oneCinema.description);
-  const [duration, setDuration] = useState(oneCinema.duration);
-  const [director, setDirector] = useState(oneCinema.director);
-  const [cast, setCast] = useState(oneCinema.cast);
-  const [date, setDate] = useState(oneCinema.release_date);
-  const [link, setLink] = useState(oneCinema.link);
-  const [genre, setGenres] = useState(oneCinema.genre);
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [image, setImage] = useState('');
+  const [descr, setDescr] = useState('');
+  const [duration, setDuration] = useState('');
+  const [director, setDirector] = useState('');
+  const [cast, setCast] = useState('');
+  const [date, setDate] = useState('');
+  const [link, setLink] = useState('');
+  const [genre, setGenres] = useState('');
 
   const navigate = useNavigate();
 
@@ -43,6 +44,11 @@ const EditCard = () => {
     formData.append('genres', genre);
     dispatch(editer({ id, formData, navigate }));
   }
+
+  // if (oneCinema) {
+  //   return <h1>Loading...</h1>;
+  // }
+
   return (
     <div>
       <div className='admin__container'>

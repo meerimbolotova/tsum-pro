@@ -17,6 +17,7 @@ export const getCinemas = createAsyncThunk('@cards/getCards', async () => {
   try {
     const config = getAuth();
     let { data } = await axios.get(`${API_CRUD}movies/`, config);
+    console.log(data.results);
     return data.results;
   } catch (error) {
     console.log(error.response.data);
@@ -39,6 +40,7 @@ export const addCinema = createAsyncThunk(
     try {
       let config = getAuth();
       await axios.post(`${API_CRUD}movies/`, formData, config);
+      dispatch(getCinemas());
       navigate('/');
     } catch (error) {
       console.log(error.response.data);
@@ -53,6 +55,7 @@ export const deleter = createAsyncThunk(
       let config = getAuth();
       await axios.delete(`${API_CRUD}movies/${id}/`, config);
       dispatch(getCinemas());
+      navigate('/');
     } catch (error) {
       console.log(error.response.data);
     }

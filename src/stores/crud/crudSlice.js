@@ -3,7 +3,7 @@ import { getCinemas, getGenres, getOneCinema, oneCinema } from './crudAction';
 
 const initialState = {
   allCinema: [],
-  oneCinema: {},
+  oneCinema: null,
   genres: [],
 };
 

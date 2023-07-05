@@ -14,10 +14,12 @@ const Admin = () => {
   const [cast, setCast] = useState('');
   const [date, setDate] = useState('');
   const [link, setLink] = useState('');
-  const [genre, setGenres] = useState('');
+  const [genre, setGenre] = useState([{ title: 'action' }]);
+  console.log(genre);
 
   useEffect(() => {
     dispatch(getGenres());
+    console.log(genre);
   }, []);
 
   const dispatch = useDispatch();
@@ -37,6 +39,7 @@ const Admin = () => {
     formData.append('link', link);
     formData.append('title', title);
     formData.append('genres', genre);
+    console.log(formData);
     dispatch(addCinema({ formData, navigate }));
   }
 
@@ -89,9 +92,9 @@ const Admin = () => {
           className='inps admin__inp'
           onChange={e => setLink(e.target.value)}
         />
-        <select name='genres' className='inps'>
+        <select name='genres' className='inps' onChange={e => setGenre(e.target.value)}>
           {genres?.map(elem => (
-            <option key={elem.title} value='elem.title' onChange={e => setGenres(e.target.value)}>
+            <option key={elem.id} value={elem.title}>
               {elem.title}
             </option>
           ))}
