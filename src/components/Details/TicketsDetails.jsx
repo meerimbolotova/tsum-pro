@@ -121,7 +121,7 @@ const TicketsDetails = () => {
     <div className="details">
       <div className="details-back">
         <div className="details-name">
-          <span className="film-name">{oneCinema.title}</span>
+          <span className="film-name">{oneCinema?.title}</span>
           <div className="film-descr">
             <span className="film-age">0+</span>
             <div className="film-genre">
@@ -136,7 +136,7 @@ const TicketsDetails = () => {
       <div className="back-blur">
         <div className="details-time">
           <div className="details-image">
-            <img src={oneCinema.image} alt="" />
+            <img src={oneCinema?.image} alt="" />
             <div className="details-youtube" onClick={() => setModal(true)}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png"
@@ -148,7 +148,7 @@ const TicketsDetails = () => {
                 <iframe
                   width="860"
                   height="515"
-                  src={oneCinema.link}
+                  src={oneCinema?.link}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -204,126 +204,181 @@ const TicketsDetails = () => {
                     className="modal-btn-setShow"
                     onClick={() => setShow(false)}
                   >
-                    close
+                    X
                   </button>
-                  <button onClick={() => addToCart(seatArr)}>buy</button>
-                  <div className="modal-place-block">
-                    <div className="modal-btn-places">
-                      {" "}
-                      <div className="modal-row">1</div>
-                      {seats().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"1" + item}
-                          onClick={() => {
-                            const row = 1;
-                            addHall(item, row);
-                          }}
-                        >
-                          {item}
-                        </button>
-                      ))}{" "}
-                      <div className="modal-rows">1</div>
+                  <div className="modal-inner">
+                    <div className="modal-inner-title">
+                      <div className="inner-title-left">
+                        <img src="" />
+                        <h3>Indiana Jones</h3>
+                      </div>
+                      <div className="inner-title-right">
+                        <h3>Zal 3</h3>
+                        <h3>5 июля 18:00, сеанс 2 часа 22 мин.</h3>
+                      </div>
                     </div>
-                    <div className="modal-btn-places">
-                      <div className="modal-row">2</div>
-                      {seats().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"2" + item}
-                          onClick={() => {
-                            const row = 2;
-                            addHall(item, row);
-                          }}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                      <div className="modal-rows">2</div>
+                    <div className="modal-inner-info">
+                      <div className="modal-inner-info">
+                        {" "}
+                        <div className="modal-inner-square-gray"></div>Стандарт
+                        - 300 сом
+                      </div>
+                      <div className="modal-inner-info">
+                        {" "}
+                        <div className="modal-inner-square-red"></div>Выбрано
+                      </div>
+                      <div className="modal-inner-info">
+                        {" "}
+                        <div className="modal-inner-square-yellow"></div>Занято
+                      </div>
                     </div>
-                    <div className="modal-btn-places">
-                      <div className="modal-row">3</div>
+                    <div className="modal-inner-monitor"></div>
 
-                      {seats().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"3" + item}
-                          onClick={() => {
-                            const row = 3;
-                            addHall(item, row);
-                          }}
-                          // className="modal-buttons-red"
-                        >
-                          {item}
-                        </button>
-                      ))}
-                      <div className="modal-rows">3</div>
-                    </div>{" "}
-                    <div className="modal-btn-places2">
-                      <div className="modal-row">4</div>
-                      {seats2().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"4" + item}
-                          onClick={() => {
-                            const row = 4;
-                            addHall(item, row);
-                          }}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                      <div className="modal-rows">4</div>
-                    </div>{" "}
-                    <div className="modal-btn-places2">
-                      <div className="modal-row">5</div>
-                      {seats2().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"5" + item}
-                          onClick={() => {
-                            const row = 5;
-                            addHall(item, row);
-                          }}
-                        >
-                          {item}
-                        </button>
-                      ))}
-                      <div className="modal-rows">5</div>
+                    <div className="modal-place-block">
+                      <div className="modal-btn-places">
+                        {" "}
+                        <div className="modal-row">1</div>
+                        {seats().map((item) => (
+                          <button
+                            className="modal-buttons"
+                            id={"1" + item}
+                            onClick={() => {
+                              const row = 1;
+                              addHall(item, row);
+                            }}
+                          >
+                            {item}
+                          </button>
+                        ))}{" "}
+                        <div className="modal-rows">1</div>
+                      </div>
+                      <div className="modal-btn-places">
+                        <div className="modal-row">2</div>
+                        {seats().map((item) => (
+                          <button
+                            className="modal-buttons"
+                            id={"2" + item}
+                            onClick={() => {
+                              const row = 2;
+                              addHall(item, row);
+                            }}
+                          >
+                            {item}
+                          </button>
+                        ))}
+                        <div className="modal-rows">2</div>
+                      </div>
+                      <div className="modal-btn-places">
+                        <div className="modal-row">3</div>
+
+                        {seats().map((item) => (
+                          <button
+                            className="modal-buttons"
+                            id={"3" + item}
+                            onClick={() => {
+                              const row = 3;
+                              addHall(item, row);
+                            }}
+                            // className="modal-buttons-red"
+                          >
+                            {item}
+                          </button>
+                        ))}
+                        <div className="modal-rows">3</div>
+                      </div>{" "}
+                      <div className="modal-btn-places2">
+                        <div className="modal-row">4</div>
+                        <div className="modar-row-btn">
+                          {seats2().map((item) => (
+                            <button
+                              className="modal-buttons"
+                              id={"4" + item}
+                              onClick={() => {
+                                const row = 4;
+                                addHall(item, row);
+                              }}
+                            >
+                              {item}
+                            </button>
+                          ))}
+                        </div>
+                        <div className="modal-rows">4</div>
+                      </div>{" "}
+                      {/* ======= начало пятый ряд ======= */}
+                      <div className="modal-btn-places2">
+                        <div className="modal-row">5</div>
+                        <div className="modar-row-btn">
+                          {seats2().map((item) => (
+                            <button
+                              className="modal-buttons"
+                              id={"5" + item}
+                              onClick={() => {
+                                const row = 5;
+                                addHall(item, row);
+                              }}
+                            >
+                              {item}
+                            </button>
+                          ))}
+                        </div>
+                        <div className="modal-rows">5</div>
+                      </div>
+                      {/* ======= конец пятый ряд ======= */}
+                      <div className="modal-btn-places2">
+                        <div className="modal-row">6</div>
+                        <div className="modar-row-btn">
+                          {seats2().map((item) => (
+                            <button
+                              className="modal-buttons"
+                              id={"6" + item}
+                              onClick={() => {
+                                const row = 6;
+                                addHall(item, row);
+                              }}
+                            >
+                              {item}
+                            </button>
+                          ))}
+                        </div>
+                        <div className="modal-rows">6</div>
+                      </div>
+                      <div className="modal-btn-places">
+                        {" "}
+                        <div className="modal-row">7</div>
+                        {seats().map((item) => (
+                          <button
+                            className="modal-buttons"
+                            id={"7" + item}
+                            onClick={() => {
+                              const row = 7;
+                              addHall(item, row);
+                            }}
+                          >
+                            {item}
+                          </button>
+                        ))}{" "}
+                        <div className="modal-rows">7</div>
+                      </div>
                     </div>
-                    <div className="modal-btn-places2">
-                      <div className="modal-row">6</div>
-                      {seats2().map((item) => (
+                    {/* ======== НАЧАЛО блок выбранных мест и сумма к оплате ======== */}
+                    <div className="modal-inner-info2">
+                      <div className="modal-inner-price">
+                        <div className="modal-inner-seats">мест: 5</div>
+                        <div className="modal-inner-total">
+                          {" "}
+                          итого: 1200 cом
+                        </div>
+                      </div>
+                      <div className="modal-inner-button-place">
                         <button
-                          className="modal-buttons"
-                          id={"6" + item}
-                          onClick={() => {
-                            const row = 6;
-                            addHall(item, row);
-                          }}
+                          className="modal-inner-button"
+                          onClick={() => addToCart(seatArr)}
                         >
-                          {item}
+                          КУПИТЬ
                         </button>
-                      ))}
-                      <div className="modal-rows">6</div>
+                      </div>
                     </div>
-                    <div className="modal-btn-places">
-                      {" "}
-                      <div className="modal-row">7</div>
-                      {seats().map((item) => (
-                        <button
-                          className="modal-buttons"
-                          id={"7" + item}
-                          onClick={() => {
-                            const row = 7;
-                            addHall(item, row);
-                          }}
-                        >
-                          {item}
-                        </button>
-                      ))}{" "}
-                      <div className="modal-rows">7</div>
-                    </div>
+                    {/* ======== КОНЕЦ блок выбранных мест и сумма к оплате ======== */}
                   </div>
                 </div>
               ) : (
@@ -331,7 +386,7 @@ const TicketsDetails = () => {
               )}
 
               <div className="price-cont">
-                <span className="price">{oneCinema.price}c</span>
+                <span className="price">{oneCinema?.price}c</span>
                 <br />
                 <span className="visual">3D</span>
               </div>
@@ -339,7 +394,7 @@ const TicketsDetails = () => {
             <div className="time-block">
               <div className="time">12:15</div>
               <div className="price-cont">
-                <span className="price">{oneCinema.price}c</span>
+                <span className="price">{oneCinema?.price}c</span>
                 <br />
                 <span className="visual">3D</span>
               </div>
@@ -347,7 +402,7 @@ const TicketsDetails = () => {
             <div className="time-block">
               <div className="time">14:15</div>
               <div className="price-cont">
-                <span className="price">{oneCinema.price}c</span>
+                <span className="price">{oneCinema?.price}c</span>
                 <br />
                 <span className="visual">3D</span>
               </div>
@@ -355,7 +410,7 @@ const TicketsDetails = () => {
             <div className="time-block">
               <div className="time">16:15</div>
               <div className="price-cont">
-                <span className="price">{oneCinema.price}c</span>
+                <span className="price">{oneCinema?.price}c</span>
                 <br />
                 <span className="visual">3D</span>
               </div>
@@ -366,23 +421,23 @@ const TicketsDetails = () => {
           <ul className="details-list">
             <li className="list-item">
               <div className="list-titles">В прокате с </div>
-              <span className="list-values">{oneCinema.release_date}</span>
+              <span className="list-values">{oneCinema?.release_date}</span>
             </li>
             <li className="list-item">
               <div className="list-titles">Хронометраж </div>
-              <span className="list-values">{oneCinema.duration}</span>
+              <span className="list-values">{oneCinema?.duration}</span>
             </li>
             <li className="list-item">
               <div className="list-titles">Режиссер </div>
-              <span className="list-values">{oneCinema.director}</span>
+              <span className="list-values">{oneCinema?.director}</span>
             </li>
             <li className="list-item">
               <div className="list-titles">В ролях </div>
-              <span className="list-values">{oneCinema.cast}</span>
+              <span className="list-values">{oneCinema?.cast}</span>
             </li>
 
             <span className="list-values" style={{ fontSize: "1.5vw" }}>
-              {oneCinema.description}
+              {oneCinema?.description}
             </span>
           </ul>
           {/* comment------ */}

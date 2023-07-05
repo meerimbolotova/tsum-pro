@@ -1,0 +1,51 @@
+.notfoundpage-container {
+  background-image: url(https://kartinkin.net/uploads/posts/2022-03/thumbs/1646984785_4-kartinkin-net-p-nazad-v-budushchee-kartinki-4.jpg);
+  background-size: cover;
+  background-position: center center;
+  -webkit-background-size: cover;
+  padding: 0;
+  margin: 0;
+  font-family: "Press Start ";
+  color: #ffffff;
+  text-align: center;
+}
+
+.notfoundpage-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 1%;
+  height: 70vh;
+}
+
+.notfoundpage-text {
+  height: 50vh;
+}
+
+@media only screen and (max-width: 768px) {
+  section.notFound {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  section.notFound div.img {
+    width: 50vw;
+    height: auto;
+  }
+  div.text a:active {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+.notfpage_text {
+  font-size: 3em;
+}
+.notfpage_404 {
+  font-size: 15rem;
+  color: rgba(255, 0, 0, 0.647);
+}
+.yes {
+  font-size: 2rem;
+  background-color: rgba(46, 9, 9, 0.433);
+  border-radius: 25%;
+}

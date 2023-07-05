@@ -3,6 +3,7 @@ import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuth, logout } from "../../auth/authAction";
+import { ADMIN } from "../../helpers/consts";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,6 +14,9 @@ const Navbar = () => {
   useEffect(() => {
     if (localStorage.getItem("token")) dispatch(checkAuth());
   }, [localStorage.getItem("token")]);
+
+  console.log(user);
+  console.log(ADMIN);
 
   return (
     <>
@@ -27,23 +31,24 @@ const Navbar = () => {
           </div>
           <div className="navbar-right">
             {user ? (
-              <a
-                className="navbar-a"
-                onClick={() => dispatch(logout(navigate))}
-              >
-                {" "}
-                Выйти
-              </a>
+              <>
+                <a
+                  className="navbar-a"
+                  onClick={() => dispatch(logout(navigate))}
+                >
+                  Выйти
+                </a>
+                {user === ADMIN && (
+                  <a className="navbar-a" onClick={() => navigate("/admin")}>
+                    АДМИН
+                  </a>
+                )}
+              </>
             ) : (
               <a className="navbar-a" onClick={() => navigate("/login")}>
-                {" "}
                 Войти
               </a>
             )}
-            {/* <a className="navbar-a" onClick={() => navigate("/login")}>
-              {" "}
-              Войти
-            </a> */}
 
             <a className="navbar-a"> Сеансы</a>
             <a className="navbar-a"> Афиша</a>

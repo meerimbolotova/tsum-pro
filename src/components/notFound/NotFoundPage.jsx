@@ -9,15 +9,15 @@ const NotFoundPage = () => {
   }, 10000);
 
   return (
-    <div className="body">
-      <section class="notFound">
-        <div class="img">
+    <div className="notfoundpage-container">
+      <div class="notfoundpage-form">
+        <div class="notfoundpage-img">
           <img
             src="https://assets.codepen.io/5647096/backToTheHomepage.png"
             alt="Back to the Homepage"
           />
         </div>
-        <div class="text">
+        <div class="notfoundpage-text">
           <h2 className="notfpage_404">404</h2>
           <h3 className="notfpage_text">PAGE NOT FOUND</h3>
           <h3 className="notfpage_text">BACK TO HOME?</h3>
@@ -31,7 +31,7 @@ const NotFoundPage = () => {
             <small>секунды</small>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
